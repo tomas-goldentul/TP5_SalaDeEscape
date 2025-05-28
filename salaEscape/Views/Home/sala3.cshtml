@@ -1,11 +1,148 @@
 terminar
-<body id="sala3">
+<body id="sala3" style="background-size: cover; background-position: center; font-family: sans-serif; text-align: center;">
 
+  <h1 id="mensaje" style="color: white;">¡Spammea la tecla correcta!</h1>
 
+  <div id="teclado" style="display: inline-block; margin-top: 30px;">
+    <div style="display: flex; justify-content: center;">
+      <div class="tecla" id="flechaUp">↑</div>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+      <div class="tecla" id="flechaLeft">←</div>
+      <div class="tecla" id="flechaDown">↓</div>
+      <div class="tecla" id="flechaRight">→</div>
+    </div>
+  </div>
 
+  <style>
+    .tecla {
+      width: 60px;
+      height: 60px;
+      background-color: #222;
+      border: 2px solid #555;
+      border-radius: 8px;
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.2s, transform 0.2s;
+    }
 
+    .tecla.destacar {
+      animation: parpadeoRapido 0.4s infinite;
+    }
 
-<div id="pad">
+    @@keyframes parpadeoRapido {
+      0%, 100% { background-color: red; color: white; transform: scale(1.1); }
+      50% { background-color: #222; color: white; transform: scale(1); }
+    }
+  </style>
+
+  <script>
+    const sala3 = document.getElementById("sala3");
+    const mensaje = document.getElementById("mensaje");
+
+    const fases = [
+      { tecla: "ArrowUp", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase 1! Spam ↑ lo más rápido posible", tiempoLimite: 3000 },
+      { tecla: "ArrowDown", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase 2! Spam ↓ lo más rápido posible", tiempoLimite: 3500 },
+      { tecla: "ArrowLeft", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase 3! Spam ← lo más rápido posible", tiempoLimite: 4000 },
+      { tecla: "ArrowRight", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase Final! Spam → lo más rápido posible", tiempoLimite: 4500 }
+    ];
+
+    const flechas = {
+      ArrowUp: document.getElementById("flechaUp"),
+      ArrowDown: document.getElementById("flechaDown"),
+      ArrowLeft: document.getElementById("flechaLeft"),
+      ArrowRight: document.getElementById("flechaRight")
+    };
+
+    let faseActual = 0;
+    let pulsaciones = 0;
+    let faseEnCurso = false;
+    let tiempoInicio = 0;
+    let temporizador = null;
+    const pulsacionesRequeridas = 15;
+    const pausaEntreFases = 2000;
+
+    function destacarFlecha(tecla) {
+      Object.values(flechas).forEach(el => el.classList.remove("destacar"));
+      if (flechas[tecla]) {
+        flechas[tecla].classList.add("destacar");
+      }
+    }
+
+    function iniciarFase() {
+      if (faseActual < fases.length) {
+        mensaje.textContent = "Preparando siguiente fase...";
+        sala3.style.backgroundImage = "none";
+        faseEnCurso = false;
+        destacarFlecha(null);
+
+        setTimeout(() => {
+          pulsaciones = 0;
+          faseEnCurso = true;
+          tiempoInicio = Date.now();
+
+          const fase = fases[faseActual];
+          sala3.style.backgroundImage = `url('${fase.imagen}')`;
+          mensaje.textContent = `${fase.mensaje} (0/${pulsacionesRequeridas})`;
+          destacarFlecha(fase.tecla);
+
+          clearTimeout(temporizador);
+          temporizador = setTimeout(() => {
+            if (faseEnCurso) {
+              faseEnCurso = false;
+              if (pulsaciones < pulsacionesRequeridas) {
+                mensaje.textContent = "¡Fallaste! Inténtalo de nuevo.";
+                sala3.style.backgroundImage = "none";
+                destacarFlecha(null);
+                faseActual = 0;
+                setTimeout(iniciarFase, pausaEntreFases);
+              }
+            }
+          }, fase.tiempoLimite);
+        }, pausaEntreFases);
+      } else {
+        mensaje.textContent = "¡Evento completado!";
+        sala3.style.backgroundImage = "url('URL_DE_TU_IMAGEN_AQUI')";
+        destacarFlecha(null);
+      }
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!faseEnCurso) return;
+
+      const fase = fases[faseActual];
+
+      if (event.key === fase.tecla) {
+        pulsaciones++;
+        mensaje.textContent = `${fase.mensaje} (${pulsaciones}/${pulsacionesRequeridas})`;
+
+        if (pulsaciones >= pulsacionesRequeridas) {
+          faseEnCurso = false;
+          clearTimeout(temporizador);
+          faseActual++;
+          destacarFlecha(null);
+          iniciarFase(); // incluye la pausa
+        }
+      } else {
+        faseEnCurso = false;
+        clearTimeout(temporizador);
+        mensaje.textContent = "¡Tecla incorrecta! Inténtalo de nuevo.";
+        sala3.style.backgroundImage = "none";
+        destacarFlecha(null);
+        faseActual = 0;
+        setTimeout(iniciarFase, pausaEntreFases);
+      }
+    });
+
+    iniciarFase();
+  </script>
+  </body>
+  <body>
+  <div id="pad" style="display: none;">
     <input type="text" id="pad-display" readonly />
     <div id="numpad">
       <button class="num-key" data-value="1">1</button>
@@ -21,34 +158,30 @@ terminar
       <button id="clear">C</button>
       <button id="submit">S</button>
     </div>
-</div>
+  </div>
 
-<script>
-  const display = getElementById("numpad-display");
-  const numKeys = querySelectorAll("num-key");
-  const clearButton = getElementById("clear");
-  const submitButton = getElementById("submit");
+  <button id="padbtn">Mostrar pad</button>
 
-  numKeys.forEach((key) => {
-    key.addEventListener("click", () => {
-      if(display.value.length < 5){
-        display.value += key.getAttribute("data-value");
-      }else if(display.value.length >=5 && submitButton.addEventListener("click")){
-        
-      }
-    });
-  });
+  <script>
+    const display = document.getElementById("pad-display");
+    const numKeys = document.querySelectorAll(".num-key");
+    const clearButton = document.getElementById("clear");
+    const submitButton = document.getElementById("submit");
 
-  clearButton.addEventListener("click", () => {
-    display.value = "";
-  });
-</script>
-
-
-    <button id="padbtn">pad</button>
-<script>
-      const boton = document.getElementById(`pad`);
-      boton.addEventListener("click", () => {
-        pad.style.display='block';
+    numKeys.forEach((key) => {
+      key.addEventListener("click", () => {
+        if (display.value.length < 5) {
+          display.value += key.getAttribute("data-value");
+        }
       });
-</script>
+    });
+
+    clearButton.addEventListener("click", () => {
+      display.value = "";
+    });
+
+    document.getElementById("padbtn").addEventListener("click", () => {
+      document.getElementById("pad").style.display = "block";
+    });
+  </script>
+</body>
