@@ -1,24 +1,28 @@
 class Sala6
 {
-         string[] colores = { "red", "blue", "green", "yellow" };
+    string[] colores = { "red", "blue", "green", "yellow" };
+    public bool perdio {get; set;} = false;
+    public List<string> letrasRandom { get; set; } = new List<string>();
+    public List<string> letrasIngresadas { get; set; } = new List<string>();
+    public int jugadas {get;set;} = 0;
 
-        public List<string> letrasRandom { get; set; } = new List<string>();
-        public List<string> letrasIngresadas { get; set; } = new List<string>();
+    public void crearRandom()
+    {
+        Random rd = new Random();
+        int NumRandom = rd.Next(colores.Length);
 
-        public void crearRandom()
+    }
+
+    public bool juego()
+    {
+        letrasRandom.Clear();
+
+        for (int i = 0; i < letrasIngresadas.Count; i++)
         {
-          Random rd = new Random();
-            int NumRandom = rd.Next(colores.Length);
-           
+            if (letrasIngresadas[i] != letrasRandom[i])
+                return perdio = true;
+                jugadas++;
         }
-
-        public bool juego()
-        {
-            for (int i = 0; i < letrasIngresadas.Count; i++)
-            {
-                if (letrasIngresadas[i] != letrasRandom[i])
-                    return false;
-            }
-            return true;
-        }
+        return perdio = false;
+    }
 }

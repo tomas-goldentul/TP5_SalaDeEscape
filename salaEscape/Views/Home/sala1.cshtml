@@ -1,0 +1,38 @@
+<body id="sala1">
+    <button id="pista1btn">Pista 1</button>
+    <button id="pista2btn">Pista 2</button>
+    <button id="pista3btn">Pista 3</button>
+    <button id="pista4btn">Pista 4</button>
+    <button id="pista5btn">Pista 5</button>
+    
+  <img id="pista1" src="pista1.jpg" alt="" width="60%" height="60%">
+  <img id="pista2" src="pista2.jpg" alt="" width="60%" height="60%">
+  <img id="pista3" src="pista3.jpg" alt="" width="60%" height="60%">
+  <img id="pista4" src="pista4.jpg" alt="" width="60%" height="60%">
+  <img id="pista5" src="pista5.jpg" alt="" width="60%" height="60%">
+
+  <script>
+    for (let i = 1; i <= 5; i++) {
+      const boton = document.getElementById(`pista${i}btn`);
+      boton.addEventListener("click", () => {
+        pista[i].style.display='block';
+      });
+    }
+  </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

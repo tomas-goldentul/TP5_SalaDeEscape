@@ -1,0 +1,54 @@
+terminar
+<body id="sala3">
+
+
+
+
+
+<div id="pad">
+    <input type="text" id="pad-display" readonly />
+    <div id="numpad">
+      <button class="num-key" data-value="1">1</button>
+      <button class="num-key" data-value="2">2</button>
+      <button class="num-key" data-value="3">3</button>
+      <button class="num-key" data-value="4">4</button>
+      <button class="num-key" data-value="5">5</button>
+      <button class="num-key" data-value="6">6</button>
+      <button class="num-key" data-value="7">7</button>
+      <button class="num-key" data-value="8">8</button>
+      <button class="num-key" data-value="9">9</button>
+      <button class="num-key" data-value="0">0</button>
+      <button id="clear">C</button>
+      <button id="submit">S</button>
+    </div>
+</div>
+
+<script>
+  const display = getElementById("numpad-display");
+  const numKeys = querySelectorAll("num-key");
+  const clearButton = getElementById("clear");
+  const submitButton = getElementById("submit");
+
+  numKeys.forEach((key) => {
+    key.addEventListener("click", () => {
+      if(display.value.length < 5){
+        display.value += key.getAttribute("data-value");
+      }else if(display.value.length >=5 && submitButton.addEventListener("click")){
+        
+      }
+    });
+  });
+
+  clearButton.addEventListener("click", () => {
+    display.value = "";
+  });
+</script>
+
+
+    <button id="padbtn">pad</button>
+<script>
+      const boton = document.getElementById(`pad`);
+      boton.addEventListener("click", () => {
+        pad.style.display='block';
+      });
+</script>

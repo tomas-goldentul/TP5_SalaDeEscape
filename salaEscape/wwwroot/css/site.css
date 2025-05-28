@@ -21,3 +21,9 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+.sala1{
+  background-image: url("images/sala1.jpg");
+}
+.pista1, .pista2, .pista3, .pista4, .pista5{
+  display: none;
+}
