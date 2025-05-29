@@ -22,6 +22,11 @@ public class HomeController : Controller
         return View();
 
     }
+    public IActionResult salas()
+    {
+        return View();
+        
+    }
         public IActionResult sala1()
     {
         return View();

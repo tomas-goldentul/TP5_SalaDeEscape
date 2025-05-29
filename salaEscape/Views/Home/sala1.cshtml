@@ -1,38 +1,77 @@
-<body id="sala1">
-    <button id="pista1btn">Pista 1</button>
-    <button id="pista2btn">Pista 2</button>
-    <button id="pista3btn">Pista 3</button>
-    <button id="pista4btn">Pista 4</button>
-    <button id="pista5btn">Pista 5</button>
-    
-  <img id="pista1" src="pista1.jpg" alt="" width="60%" height="60%">
-  <img id="pista2" src="pista2.jpg" alt="" width="60%" height="60%">
-  <img id="pista3" src="pista3.jpg" alt="" width="60%" height="60%">
-  <img id="pista4" src="pista4.jpg" alt="" width="60%" height="60%">
-  <img id="pista5" src="pista5.jpg" alt="" width="60%" height="60%">
-
+<body>
+  <button onclick="mostrarPista('pista1')">Pista 1</button>
+  <button onclick="mostrarPista('pista2')">Pista 2</button>
+  <button onclick="mostrarPista('pista3')">Pista 3</button>
+  <button onclick="mostrarPista('pista4')">Pista 4</button>
+  <button onclick="mostrarPista('pista5')">Pista 5</button>
+  <div class="pista" id="pista1">
+    <span class="cerrar" onclick="cerrarPista('pista1')">×</span>
+    <img src="/images/pista1.jpg" alt="">
+  </div>
+  <div class="pista" id="pista2">
+    <span class="cerrar" onclick="cerrarPista('pista2')">×</span>
+    <img src="/images/pista2.jpg" alt="">
+  </div>
+  <div class="pista" id="pista3">
+    <span class="cerrar" onclick="cerrarPista('pista3')">×</span>
+    <img src="/images/pista3.jpg" alt="">
+  </div>
+  <div class="pista" id="pista4">
+    <span class="cerrar" onclick="cerrarPista('pista4')">×</span>
+    <img src="/images/pista4.jpg" alt="">
+  </div>
+  <div class="pista" id="pista5">
+    <span class="cerrar" onclick="cerrarPista('pista5')">×</span>
+    <img src="/images/pista5.jpg" alt="">
+  </div>
+  <style>
+    .pista {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    .pista img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .cerrar {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+    .cerrar:hover {
+      color: red;
+    }
+  </style>
   <script>
-    for (let i = 1; i <= 5; i++) {
-      const boton = document.getElementById(`pista${i}btn`);
-      boton.addEventListener("click", () => {
-        pista[i].style.display='block';
-      });
+    function mostrarPista(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function cerrarPista(id) {
+      document.getElementById(id).style.display = "none";
     }
   </script>
+  <form action='@Url.Action("salas", "Home")' method="GET">
+  <input
+    type="number"
+    name="codigo"
+    placeholder="Ordená las pistas"
+    required
+    min="10000"
+    max="99999"
+  />
+  <input type="submit" value="Guardar" />
+</form>
+
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
