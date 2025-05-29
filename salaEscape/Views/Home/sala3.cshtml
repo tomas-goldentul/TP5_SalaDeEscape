@@ -106,8 +106,9 @@ terminar
         }, pausaEntreFases);
       } else {
         mensaje.textContent = "¡Evento completado!";
-        sala3.style.backgroundImage = "url('URL_DE_TU_IMAGEN_AQUI')";
+        sala3.style.backgroundImage = "url('')";
         destacarFlecha(null);
+        <button id="padbtn">Mostrar pad</button>
       }
     }
 
@@ -125,7 +126,7 @@ terminar
           clearTimeout(temporizador);
           faseActual++;
           destacarFlecha(null);
-          iniciarFase(); // incluye la pausa
+          iniciarFase();
         }
       } else {
         faseEnCurso = false;
@@ -159,9 +160,6 @@ terminar
       <button id="submit">S</button>
     </div>
   </div>
-
-  <button id="padbtn">Mostrar pad</button>
-
   <script>
     const display = document.getElementById("pad-display");
     const numKeys = document.querySelectorAll(".num-key");
@@ -183,5 +181,89 @@ terminar
     document.getElementById("padbtn").addEventListener("click", () => {
       document.getElementById("pad").style.display = "block";
     });
+
+    submitButton.addEventListener("click", () => {
+      const inputValue = display.value;
+      if (inputValue && inputValue.length === 5) {
+        const data = { value: inputValue };
+        fetch('/sala3', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(responseData => {
+            console.log('Respuesta del servidor:', responseData);
+          })
+          .catch(error => {
+            console.error('Error al enviar los datos:', error);
+          });
+      } else {
+        alert('Por favor, ingrese un número válido de 5 dígitos');
+      }
+    });
   </script>
+
+  <style>
+    #pad {
+      max-width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #f7f7f7;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #pad-display {
+      width: 100%;
+      height: 40px;
+      font-size: 24px;
+      text-align: right;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    #numpad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    #numpad button {
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #e0e0e0;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    #numpad button:hover {
+      background-color: #d0d0d0;
+    }
+
+    #clear {
+      background-color: #f8d7da;
+    }
+
+    #clear:hover {
+      background-color: #f5c2c7;
+    }
+
+    #submit {
+      background-color: #d4edda;
+    }
+
+    #submit:hover {
+      background-color: #c3e6cb;
+    }
+  </style>
 </body>

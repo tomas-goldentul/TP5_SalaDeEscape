@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ratas y bate animado</title>
+<style>
+  body {
+    background-color: #fdfdfd;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  .contenedor {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    margin: auto;
+    background-color: #e3e3e3;
+    border: 2px solid #999;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .juego {
+    position: relative;
+    width: 700px;
+    height: 100%;
+    background-color: #c9d7f1;
+    overflow: hidden;
+    border-right: 2px solid #666;
+  }
+
+  .ratita {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic1099295.jpg?w=1900&h=1262');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: top 0.7s ease, left 0.7s ease;
+  }
+
+  .bate {
+    position: absolute;
+    width: 90px;
+    height: 180px;
+    background-image: url('https://i5.walmartimages.com/asr/3a1a3c7c-1bd4-4682-a4b5-c3d450410aa3.ff08ca0a341a5a5f69e792817180149d.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: top 0.3s ease, left 0.3s ease, opacity 1s ease;
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    right: 0;
+    top: 100px;
+    opacity: 1;
+  }
+
+  .bate.agitar {
+    animation: agitar 0.5s ease infinite;
+  }
+
+  @keyframes agitar {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+  }
+
+  .numero {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: red;
+    pointer-events: none;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>Haz clic en las ratitas 🐭 para golpearlas con el bate animado</h2>
+
+<div class="contenedor">
+  <div class="juego" id="zonaJuego"></div>
+  <div id="bate" class="bate"></div>
+</div>
+
+<script>
+  const zonaJuego = document.getElementById("zonaJuego");
+  const bate = document.getElementById("bate");
+
+  const cantidadRatitas = 5;
+  const numeroMostrar = "40647";
+  let indiceDigito = 0;
+
+  // Control para evitar clicks mientras bate se mueve
+  let bateMoviendose = false;
+
+  function posicionAleatoria(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  // Inicializar bate
+  bate.style.position = "absolute";
+  bate.style.right = "0px";
+  bate.style.top = "100px";
+  bate.style.opacity = "1";
+
+  // Crear y mover ratitas
+  function crearRatita() {
+    const ratita = document.createElement("div");
+    ratita.className = "ratita";
+    zonaJuego.appendChild(ratita);
+
+    ratita.style.top = posicionAleatoria(zonaJuego.clientHeight - 80) + "px";
+    ratita.style.left = posicionAleatoria(zonaJuego.clientWidth - 80) + "px";
+
+    // Movimiento de ratita cada 700 ms para que se mueva más rápido
+    const mover = setInterval(() => {
+      if (document.body.contains(ratita)) {
+        ratita.style.top = posicionAleatoria(zonaJuego.clientHeight - 80) + "px";
+        ratita.style.left = posicionAleatoria(zonaJuego.clientWidth - 80) + "px";
+      } else {
+        clearInterval(mover);
+      }
+    }, 700);
+
+    ratita.style.transition = "top 0.7s ease, left 0.7s ease";
+
+    ratita.addEventListener("click", function () {
+      if (indiceDigito >= numeroMostrar.length) return;
+      if (bateMoviendose) return;  // No permitir clicks mientras bate se mueve
+
+      bateMoviendose = true;
+
+      const rectRata = this.getBoundingClientRect();
+      const rectContenedor = zonaJuego.getBoundingClientRect();
+
+      const topBate = rectRata.top - rectContenedor.top;
+      const leftBate = rectRata.left - rectContenedor.left;
+
+      // Mover bate hacia rata
+      bate.style.right = "";
+      bate.style.left = leftBate + "px";
+      bate.style.top = topBate + "px";
+
+      const onTransitionEnd = () => {
+        bate.removeEventListener("transitionend", onTransitionEnd);
+
+        // Agitar bate
+        bate.classList.add("agitar");
+
+        // Mostrar número donde estaba la rata
+        const numero = document.createElement("div");
+        numero.className = "numero";
+        numero.innerText = numeroMostrar[indiceDigito];
+        numero.style.top = topBate + "px";
+        numero.style.left = leftBate + "px";
+        zonaJuego.appendChild(numero);
+
+        this.remove();
+        indiceDigito++;
+
+        // Después de 1.5 segundos quitar animación y permitir clicks otra vez
+        setTimeout(() => {
+          bate.classList.remove("agitar");
+          bateMoviendose = false;
+
+          // Si mató a todas las ratas, hacer fade out del bate
+          if(indiceDigito >= cantidadRatitas) {
+            bate.style.transition = "opacity 1s ease";
+            bate.style.opacity = "0";
+
+            bate.addEventListener("transitionend", () => {
+              bate.style.display = "none";
+            }, { once: true });
+          }
+        }, 1500);
+      };
+
+      bate.addEventListener("transitionend", onTransitionEnd);
+    });
+  }
+
+  // Crear todas las ratitas
+  for (let i = 0; i < cantidadRatitas; i++) {
+    crearRatita();
+  }
+</script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0lkv44a8i8h8bNrqqCLrGrvAccT90fVLbYm1WX+F2f4=",
+  "Hash": "WDvw7WTxp7gZSS0oCaufZvzFRvoJMRqmXasGn/YmW+M=",
   "Source": "salaEscape",
   "BasePath": "_content/salaEscape",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "salaEscape\\wwwroot",
       "Source": "salaEscape",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\css\\site.css",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\favicon.ico",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\js\\site.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\prog\\SalaDeEscape_Nuevo\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
