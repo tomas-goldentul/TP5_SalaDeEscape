@@ -1,0 +1,31 @@
+<body>
+<div id="dialogo"></div>
+
+  <script>
+    const texto = "";
+    const velocidad = 50;
+    const dialogo = document.getElementById("dialogo");
+    let indice = 0;
+
+    function mostrarTexto() {
+      if (indice < texto.length) {
+        dialogo.textContent += texto[indice];
+        indice++;
+        setTimeout(mostrarTexto, velocidad);
+      }
+    }
+
+    mostrarTexto();
+  </script>
+  <form action='@Url.Action("salas", "Home")' method="POST">
+  <input
+    type="number"
+    name="codigo"
+    placeholder="Ordená las pistas"
+    required
+    min="10000"
+    max="99999"
+  />
+  <input type="submit" value="Guardar" />
+</form>
+</body>

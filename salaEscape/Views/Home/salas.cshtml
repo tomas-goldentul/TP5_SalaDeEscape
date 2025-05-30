@@ -1,0 +1,34 @@
+@{int salaMaxima = int.Parse(HttpContext.Session.GetString("Sala"));}
+<div>
+<a href='@Url.Action("sala1")'alt=""><img src="/images/puerta.jpg" alt=""></a>
+</div>
+<div>
+@{if(salaMaxima >= 2){
+<a href='@Url.Action("sala2")'alt=""><img src="/images/puerta.jpg" alt=""></a>}else{
+    <img src="/images/puertaCerrada.jpg" alt="">
+}}
+</div>
+<div>
+@{if(salaMaxima >= 3){
+<a href='@Url.Action("sala3")'alt=""><img src="/images/puerta.jpg" alt=""></a>}else{
+    <img src="/images/puertaCerrada.jpg" alt="">
+}}
+</div>
+<div>
+@{if(salaMaxima >= 4){
+<a href='@Url.Action("sala4")'alt=""><img src="/images/puerta.jpg" alt=""></a>}else{
+    <img src="/images/puertaCerrada.jpg" alt="">
+}}
+</div>
+<div>
+@{if(salaMaxima >= 5){
+<a href='@Url.Action("sala5")'alt=""><img src="/images/puerta.jpg" alt=""></a>}else{
+    <img src="/images/puertaCerrada.jpg" alt="">
+}}
+</div>
+<div>
+@{if(salaMaxima >= 6){
+<a href='@Url.Action("sala6")'alt=""><img src="/images/puerta.jpg" alt=""></a>}else{
+    <img src="/images/puertaCerrada.jpg" alt="">
+}}
+</div>

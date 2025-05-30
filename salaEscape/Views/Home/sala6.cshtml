@@ -1,0 +1,41 @@
+
+@{
+    ViewData["Title"] = "Sala 6 - Simón Dice";
+
+    var letrasRandom = ViewBag.letrasRandom as List<string> ?? new List<string>();
+    var letrasIngresadas = ViewBag.letrasIngresadas as List<string> ?? new List<string>();
+    var jugadas = ViewBag.jugadas != null ? (int)ViewBag.jugadas : 0;
+    var perdio = ViewBag.perdio != null ? (bool)ViewBag.perdio : false;
+}
+
+<h1>🎮 Sala 6 - Simón Dice</h1>
+
+<div style="margin-bottom: 20px;">
+    <h3>🔁 Secuencia generada (colores):</h3>
+    <p>
+        @foreach (var letra in letrasRandom)
+        {
+            <span style="margin-right: 10px; font-weight: bold;">@letra.ToUpper()</span>
+        }
+    </p>
+</div>
+
+<div style="margin-bottom: 20px;">
+    <h3>📝 Tu secuencia ingresada:</h3>
+    <p>
+        @foreach (var letra in letrasIngresadas)
+        {
+            <span style="margin-right: 10px; color: gray;">@letra.ToUpper()</span>
+        }
+    </p>
+</div>
+
+<div style="margin-bottom: 20px;">
+    <p>Jugadas realizadas: <strong>@jugadas</strong></p>
+</div>
+
+<form asp-action="Sala6" method="post">
+    <label for="letra">Ingresá la primera letra del color (r, b, g, y):</label>
+    <input type="text" name="letra" id="letra" maxlength="1" required />
+    <button type="submit">Enviar</button>
+</form>

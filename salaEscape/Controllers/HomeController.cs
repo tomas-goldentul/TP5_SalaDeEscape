@@ -17,6 +17,7 @@ public class HomeController : Controller
     {
         return View();
     }
+    
         public IActionResult creditos()
     {
         return View();
@@ -27,19 +28,29 @@ public class HomeController : Controller
         return View();
         
     }
-        public IActionResult sala1()
+        public IActionResult sala1(int clave)
     {
-        return View();
-
+        if(Sala1(clave)){
+            string nuevaSalaMaxima = "2";
+            HttpContext.Session.SetString("Sala", nuevaSalaMaxima);
+        return View("sala2");}else{
+            return View();
+        }
     }
           public IActionResult sala2()
     {
         return View();
 
     }
-          public IActionResult sala3()
+         public IActionResult sala3(int clave)
     {
-        return View();
+        
+        if(Sala3(clave)){
+            string nuevaSalaMaxima = "4";
+            HttpContext.Session.SetString("Sala", nuevaSalaMaxima);
+            return View("sala4");
+        }else{
+        return View();}
 
     }
            public IActionResult sala4()
@@ -47,10 +58,14 @@ public class HomeController : Controller
         return View();
 
     }
-           public IActionResult sala5()
+           public IActionResult sala5(int clave)
     {
-        return View();
-
+        if(sala5(clave)){
+            string nuevaSalaMaxima = "6";
+            HttpContext.Session.SetString("Sala", nuevaSalaMaxima);
+        return View("sala6");}else{
+            return View();
+        }
     }
            public IActionResult salaFinal()
     {
@@ -62,23 +77,38 @@ public class HomeController : Controller
         return View();
 
     }
-    public IActionResult sala6()
+    
+    public IActionResult sala6(char letra)
     {
         const int JUGADAS_MAXIMAS = 5;
+var letrasRandom = ObjetoLista.ObtenerLista<char>(HttpContext.Session, "letrasRandom");
+var letrasIngresadas = ObjetoLista.ObtenerLista<char>(HttpContext.Session, "letrasIngresadas");
+
+ViewBag.LetrasRandom = letrasRandom;
+ViewBag.LetrasIngresadas = letrasIngresadas;
+
+return View();
+
+
         ViewBag.perdio = ObjetoUtils.StringToObject<bool>(HttpContext.Session.GetString("perdio"));
         ViewBag.cantJugadas = ObjetoUtils.StringToObject<int>(HttpContext.Session.GetString("jugadas"));
         
-        if (ViewBag.perdio == true)
-        {
-            return View("derrota");
-        }
-        else if (ViewBag.perdio == true && ViewBag.jugadas == JUGADAS_MAXIMAS)
+        if (ViewBag.perdio == true && ViewBag.jugadas == JUGADAS_MAXIMAS)
         {
             return View("salaFinal");
         }
+        else if (ViewBag.perdio == true)
+        {
+           return View("derrota");
+
+        }
+
         else{
             return View();
-        }
+        } 
+       
+        
+
 
     }
 }

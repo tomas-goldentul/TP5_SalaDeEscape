@@ -1,17 +1,22 @@
-using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using System.Text.Json;
 
 public static class ObjetoLista
 {
-
-    public static string ListToString<T>(List<T> lista)
+    public static void GuardarLista<T>(ISession session, string key, List<T> lista)
     {
-        return JsonConvert.SerializeObject(lista);
+        var json = JsonSerializer.Serialize(lista);
+        session.SetString(key, json);
     }
-    public static List<T> StringToList<T>(string json)
+
+    public static List<T> ObtenerLista<T>(ISession session, string key)
     {
+        var json = session.GetString(key);
         if (string.IsNullOrEmpty(json))
-            return default;
-        else
-            return JsonConvert.DeserializeObject<List<T>>(json);
+        {
+            return new List<T>();
+        }
+        return JsonSerializer.Deserialize<List<T>>(json);
     }
 }
