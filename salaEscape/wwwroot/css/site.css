@@ -14,8 +14,10 @@ body {
   padding: 10px;
 }
 
-
+section{
+  clear: both;}
 footer {
+  clear: both;
   margin-top: 10px;
   padding: 10px;
   background-color: #f8f9fa;

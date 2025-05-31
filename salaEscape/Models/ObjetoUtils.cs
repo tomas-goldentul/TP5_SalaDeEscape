@@ -1,17 +1,25 @@
 using Newtonsoft.Json;
 
+namespace salaEscape.Models;
+
 public static class ObjetoUtils
 {
-
     public static string ObjectToString<T>(T? obj)
     {
-        return JsonConvert.SerializeObject(obj);
+        return obj != null ? JsonConvert.SerializeObject(obj) : string.Empty;
     }
-    public static T? StringToObject<T>(string txt)
+
+    public static T? StringToObject<T>(string? txt)
     {
         if (string.IsNullOrEmpty(txt))
             return default;
-        else
+        try
+        {
             return JsonConvert.DeserializeObject<T>(txt);
+        }
+        catch
+        {
+            return default;
+        }
     }
 }

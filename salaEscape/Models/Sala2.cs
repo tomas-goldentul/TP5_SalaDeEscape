@@ -1,6 +1,8 @@
-class Sala2
+namespace salaEscape.Models;
+
+public class Sala2
 {
-    public string palabraAdivinar { get; set; }
+    public required string palabraAdivinar { get; set; }
     public List<char> letrasAdivinadas { get; set; } = new List<char>();
     public List<char> palabraJugada { get; set; } = new List<char>();
     public List<char> letrasErradas { get; set; } = new List<char>();
@@ -33,10 +35,8 @@ class Sala2
             }
             else
             {
-
                 palabraJugada.Add('_');
             }
-
         }
         if (!palabraJugada.Contains('_'))
         {
