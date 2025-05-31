@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "¡Has perdido!";
+}
+
+<div class="derrota-container">
+    <h1>¡Has perdido!</h1>
+    <p>No te preocupes, puedes intentarlo de nuevo.</p>
+    <a href='@Url.Action("Salas")' class="btn-reintentar">Volver a las salas</a>
+</div>
+
+<style>
+    .derrota-container {
+        text-align: center;
+        padding: 50px;
+    }
+
+    .btn-reintentar {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .btn-reintentar:hover {
+        background-color: #c82333;
+    }
+</style> 

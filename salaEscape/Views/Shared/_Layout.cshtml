@@ -5,12 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Sala de Escape</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/salas.css" />
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 
 <body>
     <header>
-        <a href='@Url.Action("salas")'alt=""><img src="/images/salas.jpg" alt=""></a>
+        <a href='@Url.Action("Salas")'><img src="/images/salas.jpg" alt="Salas"></a>
     </header>
 
     <main role="main">
@@ -22,7 +25,8 @@
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

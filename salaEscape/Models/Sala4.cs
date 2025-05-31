@@ -1,6 +1,10 @@
-class Sala4{
-    const int clave = 40647;
-public bool verificar(int Clave){
-    return Clave == clave;
-}
+namespace salaEscape.Models;
+
+public class Sala4
+{
+    public const int Clave = 40647;
+    public bool Verificar(int clave)
+    {
+        return clave == Clave;
+    }
 }

@@ -1,77 +1,37 @@
-<body>
-  <button onclick="mostrarPista('pista1')">Pista 1</button>
-  <button onclick="mostrarPista('pista2')">Pista 2</button>
-  <button onclick="mostrarPista('pista3')">Pista 3</button>
-  <button onclick="mostrarPista('pista4')">Pista 4</button>
-  <button onclick="mostrarPista('pista5')">Pista 5</button>
-  <div class="pista" id="pista1">
-    <span class="cerrar" onclick="cerrarPista('pista1')">×</span>
-    <img src="/images/pista1.jpg" alt="">
-  </div>
-  <div class="pista" id="pista2">
-    <span class="cerrar" onclick="cerrarPista('pista2')">×</span>
-    <img src="/images/pista2.jpg" alt="">
-  </div>
-  <div class="pista" id="pista3">
-    <span class="cerrar" onclick="cerrarPista('pista3')">×</span>
-    <img src="/images/pista3.jpg" alt="">
-  </div>
-  <div class="pista" id="pista4">
-    <span class="cerrar" onclick="cerrarPista('pista4')">×</span>
-    <img src="/images/pista4.jpg" alt="">
-  </div>
-  <div class="pista" id="pista5">
-    <span class="cerrar" onclick="cerrarPista('pista5')">×</span>
-    <img src="/images/pista5.jpg" alt="">
-  </div>
-  <style>
-    .pista {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-direction: column;
-    }
-    .pista img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-    .cerrar {
-      color: white;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 30px;
-    }
-    .cerrar:hover {
-      color: red;
-    }
-  </style>
-  <script>
-    function mostrarPista(id) {
-      document.getElementById(id).style.display = "flex";
-    }
-    function cerrarPista(id) {
-      document.getElementById(id).style.display = "none";
-    }
-  </script>
-  <form action='@Url.Action("salas", "Home")' method="GET">
-  <input
-    type="number"
-    name="codigo"
-    placeholder="Ordená las pistas"
-    required
-    min="10000"
-    max="99999"
-  />
-  <input type="submit" value="Guardar" />
-</form>
+@{
+    ViewData["Title"] = "Sala 1";
+}
 
-</body>
+<div class="sala1-container">
+    <button onclick="mostrarPista('pista1')">Pista 1</button>
+    <button onclick="mostrarPista('pista2')">Pista 2</button>
+    <button onclick="mostrarPista('pista3')">Pista 3</button>
+    <button onclick="mostrarPista('pista4')">Pista 4</button>
+    <button onclick="mostrarPista('pista5')">Pista 5</button>
+
+    <div class="pista" id="pista1">
+        <span class="cerrar" onclick="cerrarPista('pista1')">×</span>
+        <img src="/images/pista1.jpg" alt="Pista 1">
+    </div>
+    <div class="pista" id="pista2">
+        <span class="cerrar" onclick="cerrarPista('pista2')">×</span>
+        <img src="/images/pista2.jpg" alt="Pista 2">
+    </div>
+    <div class="pista" id="pista3">
+        <span class="cerrar" onclick="cerrarPista('pista3')">×</span>
+        <img src="/images/pista3.jpg" alt="Pista 3">
+    </div>
+    <div class="pista" id="pista4">
+        <span class="cerrar" onclick="cerrarPista('pista4')">×</span>
+        <img src="/images/pista4.jpg" alt="Pista 4">
+    </div>
+    <div class="pista" id="pista5">
+        <span class="cerrar" onclick="cerrarPista('pista5')">×</span>
+        <img src="/images/pista5.jpg" alt="Pista 5">
+    </div>
+
+    <form action='@Url.Action("Sala1", "Home")' method="POST">
+        <input type="number" name="clave" placeholder="Ordená las pistas" required min="10000" max="99999" />
+        <input type="submit" value="Guardar" />
+    </form>
+</div>

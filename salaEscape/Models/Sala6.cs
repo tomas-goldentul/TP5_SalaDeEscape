@@ -1,38 +1,58 @@
-class Sala6
-{
-    char[] colores = { 'R', 'B', 'G', 'Y' };
-    public bool perdio {get; set;} = false;
-    public List<char> letrasRandom { get; set; } = new List<char>();
-    public List<char> letrasIngresadas { get; set; } = new List<char>();
-    public int jugadas {get;set;} = 0;
+namespace salaEscape.Models;
 
-    public void crearRandom()
+public class Sala6
+{
+    private readonly char[] colores = { 'R', 'B', 'G', 'Y' };
+    public bool Perdio { get; private set; } = false;
+    public List<char> LetrasRandom { get; private set; } = new List<char>();
+    public List<char> LetrasIngresadas { get; private set; } = new List<char>();
+    public int Jugadas { get; private set; } = 0;
+
+    public void CrearRandom()
     {
         Random rd = new Random();
-        int NumRandom = rd.Next(colores.Length);
-        letrasRandom.Add(colores[NumRandom]);
-
+        int numRandom = rd.Next(colores.Length);
+        LetrasRandom.Add(colores[numRandom]);
     }
 
-    public bool juego(char letra)
-    {            crearRandom();
+    public bool Jugar(char letra)
+    {
+        CrearRandom();
+        LetrasIngresadas.Add(char.ToUpper(letra));
+        Jugadas++;
 
-         letrasIngresadas.Add(letra);
-        for (int i = 0; i < letrasIngresadas.Count; i++)
+        for (int i = 0; i < LetrasIngresadas.Count; i++)
         {
-            if (letrasIngresadas[i] != letrasRandom[i])
-                return perdio = true;
-                jugadas++;
+            if (LetrasIngresadas[i] != LetrasRandom[i])
+            {
+                Perdio = true;
+                return true;
+            }
         }
-        return perdio;
-        
-    }
-    public List<char> devolverLetrasRandom(){
-        return letrasRandom;
+
+        return false;
     }
 
+    public bool HaGanado()
+    {
+        return !Perdio && Jugadas >= 5;
+    }
 
-public List<char> devolverLetrasIngresadas(){
-    return letrasIngresadas;
-}
+    public void Reiniciar()
+    {
+        Perdio = false;
+        LetrasRandom.Clear();
+        LetrasIngresadas.Clear();
+        Jugadas = 0;
+    }
+
+    public List<char> devolverLetrasRandom()
+    {
+        return LetrasRandom;
+    }
+
+    public List<char> devolverLetrasIngresadas()
+    {
+        return LetrasIngresadas;
+    }
 }

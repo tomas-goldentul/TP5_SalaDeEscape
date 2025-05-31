@@ -7,6 +7,7 @@ namespace salaEscape.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private const string SALA_KEY = "Sala";
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -18,97 +19,117 @@ public class HomeController : Controller
         return View();
     }
     
-        public IActionResult creditos()
+    public IActionResult Creditos()
     {
         return View();
-
     }
-    public IActionResult salas()
-    {
-        return View();
-        
-    }
-        public IActionResult sala1(int clave)
-    {
-        if(Sala1(clave)){
-            string nuevaSalaMaxima = "2";
-            HttpContext.Session.SetString("Sala", nuevaSalaMaxima);
-        return View("sala2");}else{
-            return View();
-        }
-    }
-          public IActionResult sala2()
-    {
-        return View();
 
-    }
-         public IActionResult sala3(int clave)
+    public IActionResult Salas()
     {
-        
-        if(Sala3(clave)){
-            string nuevaSalaMaxima = "4";
-            HttpContext.Session.SetString("Sala", nuevaSalaMaxima);
-            return View("sala4");
-        }else{
-        return View();}
-
-    }
-           public IActionResult sala4()
-    {
-        return View();
-
-    }
-           public IActionResult sala5(int clave)
-    {
-        if(sala5(clave)){
-            string nuevaSalaMaxima = "6";
-            HttpContext.Session.SetString("Sala", nuevaSalaMaxima);
-        return View("sala6");}else{
-            return View();
-        }
-    }
-           public IActionResult salaFinal()
-    {
-        return View();
-
-    }
-            public IActionResult historia()
-    {
-        return View();
-
-    }
-    
-    public IActionResult sala6(char letra)
-    {
-        const int JUGADAS_MAXIMAS = 5;
-var letrasRandom = ObjetoLista.ObtenerLista<char>(HttpContext.Session, "letrasRandom");
-var letrasIngresadas = ObjetoLista.ObtenerLista<char>(HttpContext.Session, "letrasIngresadas");
-
-ViewBag.LetrasRandom = letrasRandom;
-ViewBag.LetrasIngresadas = letrasIngresadas;
-
-return View();
-
-
-        ViewBag.perdio = ObjetoUtils.StringToObject<bool>(HttpContext.Session.GetString("perdio"));
-        ViewBag.cantJugadas = ObjetoUtils.StringToObject<int>(HttpContext.Session.GetString("jugadas"));
-        
-        if (ViewBag.perdio == true && ViewBag.jugadas == JUGADAS_MAXIMAS)
+        if (string.IsNullOrEmpty(HttpContext.Session.GetString(SALA_KEY)))
         {
-            return View("salaFinal");
+            HttpContext.Session.SetString(SALA_KEY, "1");
         }
-        else if (ViewBag.perdio == true)
+        return View();
+    }
+
+    public IActionResult Historia()
+    {
+        return View();
+    }
+
+    public IActionResult Sala1(int clave)
+    {
+        var sala = new Sala1();
+        if(sala.Verificar(clave))
         {
-           return View("derrota");
+            HttpContext.Session.SetString(SALA_KEY, "2");
+            return RedirectToAction("Sala2");
+        }
+        return View();
+    }
 
+    public IActionResult Sala2()
+    {
+        if (!ValidarProgresoSala(2)) return RedirectToAction("Salas");
+        return View();
+    }
+
+    public IActionResult Sala3(int clave)
+    {
+        if (!ValidarProgresoSala(3)) return RedirectToAction("Salas");
+        
+        if(new Sala3().Verificar(clave))
+        {
+            HttpContext.Session.SetString(SALA_KEY, "4");
+            return RedirectToAction("Sala4");
+        }
+        return View();
+    }
+
+    public IActionResult Sala4()
+    {
+        if (!ValidarProgresoSala(4)) return RedirectToAction("Salas");
+        return View();
+    }
+
+    public IActionResult Sala5(int clave)
+    {
+        if (!ValidarProgresoSala(5)) return RedirectToAction("Salas");
+        
+        if(new Sala5().Verificar(clave))
+        {
+            HttpContext.Session.SetString(SALA_KEY, "6");
+            return RedirectToAction("Sala6");
+        }
+        return View();
+    }
+
+    public IActionResult Sala6(char letra)
+    {
+        if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
+
+        var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
+        
+        if (sala6.Jugar(letra))
+        {
+            if (sala6.HaGanado())
+            {
+                return RedirectToAction("SalaFinal");
+            }
+            return RedirectToAction("Derrota");
         }
 
-        else{
-            return View();
-        } 
-       
+        HttpContext.Session.SetString("Sala6", ObjetoUtils.ObjectToString(sala6));
         
+        ViewBag.LetrasRandom = sala6.LetrasRandom;
+        ViewBag.LetrasIngresadas = sala6.LetrasIngresadas;
+        ViewBag.Jugadas = sala6.Jugadas;
+        ViewBag.Perdio = sala6.Perdio;
+        
+        return View();
+    }
 
+    public IActionResult SalaFinal()
+    {
+        return View();
+    }
 
+    public IActionResult Derrota()
+    {
+        return View();
+    }
+
+    private bool ValidarProgresoSala(int salaActual)
+    {
+        var salaMaxima = HttpContext.Session.GetString(SALA_KEY);
+        if (string.IsNullOrEmpty(salaMaxima)) return false;
+        return int.Parse(salaMaxima) >= salaActual;
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

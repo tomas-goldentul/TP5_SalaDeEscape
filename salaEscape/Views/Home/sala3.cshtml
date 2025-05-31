@@ -1,4 +1,8 @@
-<body id="sala3">
+@{
+    ViewData["Title"] = "Sala 3";
+}
+
+<div class="sala3-container" id="sala3">
   <!-- 42987 -->
 <section id="qte" style="background-size: cover; background-position: center; font-family: sans-serif; text-align: center;">
   <h1 id="mensaje" style="color: white;">¡Spammea la tecla correcta!</h1>
@@ -159,104 +163,5 @@
       <button id="submit">S</button>
     </div>
   </div>
-  <script>
-    const display = document.getElementById("pad-display");
-    const numKeys = document.querySelectorAll(".num-key");
-    const clearButton = document.getElementById("clear");
-    const submitButton = document.getElementById("submit");
-
-    numKeys.forEach((key) => {
-      key.addEventListener("click", () => {
-        if (display.value.length < 5) {
-          display.value += key.getAttribute("data-value");
-        }
-      });
-    });
-
-    clearButton.addEventListener("click", () => {
-      display.value = "";
-    });
-
-    document.getElementById("padbtn").addEventListener("click", () => {
-      document.getElementById("pad").style.display = "block";
-    });
-
-    submitButton.addEventListener("click", () => {
-      const inputValue = display.value;
-      if (inputValue && inputValue.length === 5) {
-        const data = { value: inputValue };
-        fetch('/sala3', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-      } else {
-        alert('Por favor, ingrese un número válido de 5 dígitos');
-      }
-    });
-  </script>
-
-  <style>
-    #pad {
-      max-width: 200px;
-      margin: 20px auto;
-      padding: 10px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      background-color: #f7f7f7;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    #pad-display {
-      width: 100%;
-      height: 40px;
-      font-size: 24px;
-      text-align: right;
-      margin-bottom: 10px;
-      padding: 5px 10px;
-      box-sizing: border-box;
-      border: 1px solid #aaa;
-      border-radius: 4px;
-      background-color: #fff;
-    }
-
-    #numpad {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    #numpad button {
-      padding: 15px;
-      font-size: 18px;
-      border: none;
-      border-radius: 6px;
-      background-color: #e0e0e0;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    #numpad button:hover {
-      background-color: #d0d0d0;
-    }
-
-    #clear {
-      background-color: #f8d7da;
-    }
-
-    #clear:hover {
-      background-color: #f5c2c7;
-    }
-
-    #submit {
-      background-color: #d4edda;
-    }
-
-    #submit:hover {
-      background-color: #c3e6cb;
-    }
-  </style>
   </section>
-</body>
+</div>
