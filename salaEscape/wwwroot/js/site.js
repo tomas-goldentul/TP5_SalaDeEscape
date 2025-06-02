@@ -170,94 +170,101 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         iniciarFase();
+    }
 
-        //Sala 4
-        if (document.querySelector(".sala4-container")) {
-            const zonaJuego = document.getElementById("zonaJuego");
-            const bate = document.getElementById("bate");
-            const contenedor = document.querySelector(".contenedor");
+    // Sala 4
+    const sala4 = document.querySelector('.sala4');
+    if (sala4) {
+        console.log('Inicializando Sala 4...');
+        
+        const areaJuego = sala4.querySelector('.area-juego');
+        const bate = sala4.querySelector('.bate');
 
-            const cantidadRatitas = 5;
-            const numeroMostrar = "40647";
-            let indiceDigito = 0;
-            let bateMoviendose = false;
+        if (!areaJuego || !bate) {
+            console.error('No se encontraron elementos necesarios para la Sala 4');
+            return;
+        }
 
-            function crearRatita() {
-                const ratita = document.createElement("div");
-                ratita.className = "ratita";
-                
-                // Posición aleatoria dentro de la zona de juego
-                const maxX = zonaJuego.clientWidth - 80;
-                const maxY = zonaJuego.clientHeight - 80;
-                const x = Math.floor(Math.random() * maxX);
-                const y = Math.floor(Math.random() * maxY);
-                
-                ratita.style.left = x + "px";
-                ratita.style.top = y + "px";
-                
-                ratita.addEventListener("click", (e) => golpearRatita(e, ratita));
-                zonaJuego.appendChild(ratita);
-                
-                // Mover la ratita cada cierto tiempo
+        const CODIGO = '40647';
+        const NUM_RATAS = 5;
+        let ratasGolpeadas = 0;
+        let digitoActual = 0;
+        let animacionEnProgreso = false;
+
+        function crearRatas() {
+            console.log('Creando ratas...');
+            for (let i = 0; i < NUM_RATAS; i++) {
+                const rata = document.createElement('div');
+                rata.className = 'rata';
+                posicionarRataAleatoriamente(rata);
+                rata.addEventListener('click', (e) => golpearRata(e, rata));
+                areaJuego.appendChild(rata);
+                console.log('Rata creada:', i + 1);
+
                 setInterval(() => {
-                    if (!ratita.classList.contains("golpeada")) {
-                        const newX = Math.floor(Math.random() * maxX);
-                        const newY = Math.floor(Math.random() * maxY);
-                        ratita.style.left = newX + "px";
-                        ratita.style.top = newY + "px";
+                    if (!rata.classList.contains('golpeada')) {
+                        posicionarRataAleatoriamente(rata);
                     }
-                }, 2000);
-            }
-
-            function golpearRatita(evento, ratita) {
-                if (ratita.classList.contains("golpeada") || bateMoviendose) return;
-                
-                bateMoviendose = true;
-                
-                // Posicionar el bate donde se hizo clic
-                const rect = contenedor.getBoundingClientRect();
-                const x = evento.clientX - rect.left;
-                const y = evento.clientY - rect.top;
-                
-                bate.style.left = (x - 45) + "px";
-                bate.style.top = (y - 90) + "px";
-                bate.style.transform = "rotate(-45deg)";
-                
-                // Animar el golpe
-                setTimeout(() => {
-                    bate.style.transform = "rotate(0deg)";
-                    ratita.classList.add("golpeada");
-                    
-                    // Mostrar número
-                    const numero = document.createElement("div");
-                    numero.className = "numero";
-                    numero.textContent = numeroMostrar[indiceDigito];
-                    numero.style.left = (x - 10) + "px";
-                    numero.style.top = (y - 20) + "px";
-                    contenedor.appendChild(numero);
-                    
-                    // Desvanecer número
-                    setTimeout(() => {
-                        numero.remove();
-                    }, 1000);
-                    
-                    indiceDigito++;
-                    bateMoviendose = false;
-                    
-                    // Verificar si se han golpeado todas las ratas
-                    if (document.querySelectorAll(".ratita.golpeada").length === cantidadRatitas) {
-                        setTimeout(() => {
-                            alert("¡Has encontrado todos los números! El código es: " + numeroMostrar);
-                            mostrarFormularioClave(numeroMostrar);
-                        }, 1000);
-                    }
-                }, 200);
-            }
-
-            // Crear las ratitas iniciales
-            for (let i = 0; i < cantidadRatitas; i++) {
-                crearRatita();
+                }, Math.random() * 1000 + 1500);
             }
         }
+
+        function posicionarRataAleatoriamente(rata) {
+            const maxX = areaJuego.clientWidth - 60;
+            const maxY = areaJuego.clientHeight - 60;
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+            
+            rata.style.left = x + 'px';
+            rata.style.top = y + 'px';
+        }
+
+        function golpearRata(evento, rata) {
+            if (rata.classList.contains('golpeada') || animacionEnProgreso) return;
+            
+            console.log('Golpeando rata...');
+            animacionEnProgreso = true;
+            
+            const rect = areaJuego.getBoundingClientRect();
+            const x = evento.clientX - rect.left;
+            const y = evento.clientY - rect.top;
+
+            bate.style.left = (x - 40) + 'px';
+            bate.style.top = (y - 160) + 'px';
+            bate.style.display = 'block';
+            bate.style.transform = 'rotate(-45deg)';
+
+            setTimeout(() => {
+                bate.style.transform = 'rotate(0deg)';
+                rata.classList.add('golpeada');
+
+                const numero = document.createElement('div');
+                numero.className = 'numero';
+                numero.textContent = CODIGO[digitoActual];
+                numero.style.left = (x - 15) + 'px';
+                numero.style.top = (y - 15) + 'px';
+                areaJuego.appendChild(numero);
+
+                setTimeout(() => {
+                    numero.remove();
+                    bate.style.display = 'none';
+                }, 1000);
+
+                digitoActual++;
+                ratasGolpeadas++;
+                animacionEnProgreso = false;
+
+                console.log('Ratas golpeadas:', ratasGolpeadas);
+                if (ratasGolpeadas === NUM_RATAS) {
+                    setTimeout(() => {
+                        alert('¡Has descubierto el código secreto!');
+                        mostrarFormularioClave(CODIGO);
+                    }, 1000);
+                }
+            }, 200);
+        }
+
+        // Iniciar el juego
+        setTimeout(crearRatas, 500); // Dar tiempo a que todo se cargue correctamente
     }
 });

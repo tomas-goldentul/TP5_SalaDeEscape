@@ -2,24 +2,24 @@
     ViewData["Title"] = "Sala 4";
 }
 
-<div class="sala4-container">
-    <h2>Haz clic en las ratitas 🐭 para golpearlas con el bate animado</h2>
+<div class="sala4">
+    <h1>Sala 4 - Las Ratas del Laboratorio</h1>
+    <p class="instrucciones">Golpea a las ratas para descubrir el código secreto</p>
 
-    <div class="contenedor">
-        <div class="juego" id="zonaJuego"></div>
-        <div id="bate" class="bate"></div>
+    <div class="juego-container">
+        <div class="area-juego"></div>
+        <div class="bate"></div>
     </div>
 
-    <form id="claveForm" action='@Url.Action("Sala4", "Home")' method="POST" style="display: none;">
-        <input type="number" name="clave" id="claveInput" required>
-        <button type="submit">Continuar</button>
+    <form id="formulario-codigo" method="post" style="display: none;">
+        <input type="number" name="clave" id="input-codigo" required>
+        <button type="submit">Enviar código</button>
     </form>
 </div>
 
 <script>
-    // Función para mostrar el formulario cuando se complete el juego
     function mostrarFormularioClave(clave) {
-        document.getElementById('claveInput').value = clave;
-        document.getElementById('claveForm').style.display = 'block';
+        document.getElementById('input-codigo').value = clave;
+        document.getElementById('formulario-codigo').style.display = 'block';
     }
 </script>
