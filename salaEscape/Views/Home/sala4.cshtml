@@ -9,5 +9,17 @@
         <div class="juego" id="zonaJuego"></div>
         <div id="bate" class="bate"></div>
     </div>
+
+    <form id="claveForm" action='@Url.Action("Sala4", "Home")' method="POST" style="display: none;">
+        <input type="number" name="clave" id="claveInput" required>
+        <button type="submit">Continuar</button>
+    </form>
 </div>
 
+<script>
+    // Función para mostrar el formulario cuando se complete el juego
+    function mostrarFormularioClave(clave) {
+        document.getElementById('claveInput').value = clave;
+        document.getElementById('claveForm').style.display = 'block';
+    }
+</script>

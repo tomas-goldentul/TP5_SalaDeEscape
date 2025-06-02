@@ -2,7 +2,7 @@ namespace salaEscape.Models;
 
 public class Sala2
 {
-    public required string palabraAdivinar { get; set; }
+    public string palabraAdivinar { get; set; } = string.Empty;
     public List<char> letrasAdivinadas { get; set; } = new List<char>();
     public List<char> palabraJugada { get; set; } = new List<char>();
     public List<char> letrasErradas { get; set; } = new List<char>();

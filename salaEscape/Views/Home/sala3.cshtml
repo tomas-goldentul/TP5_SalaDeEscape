@@ -1,167 +1,45 @@
 @{
     ViewData["Title"] = "Sala 3";
-}
-
-<div class="sala3-container" id="sala3">
-  <!-- 42987 -->
-<section id="qte" style="background-size: cover; background-position: center; font-family: sans-serif; text-align: center;">
-  <h1 id="mensaje" style="color: white;">¡Spammea la tecla correcta!</h1>
-  <div id="teclado" style="display: inline-block; margin-top: 30px;">
-    <div style="display: flex; justify-content: center;">
-      <div class="tecla" id="flechaUp">↑</div>
-    </div>
-    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
-      <div class="tecla" id="flechaLeft">←</div>
-      <div class="tecla" id="flechaDown">↓</div>
-      <div class="tecla" id="flechaRight">→</div>
-    </div>
+}  
+<script>
+    var qteTerminado = @Json.Serialize(ViewBag.QteTerminado);
+</script>
+<body id="sala3">
+  <!--42987-->
+  <div class="sala3-container">
+    <section id="qte" style="background-size: cover; background-position: center; font-family: sans-serif; text-align: center;">
+      <h1 id="mensaje" style="color: white;">¡Spammea la tecla correcta!</h1>
+      <div id="teclado" style="display: inline-block; margin-top: 30px;">
+        <div style="display: flex; justify-content: center;">
+          <div class="tecla" id="teclaW">W</div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+          <div class="tecla" id="teclaA">A</div>
+          <div class="tecla" id="teclaS">S</div>
+          <div class="tecla" id="teclaD">D</div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <button id="padbtn" style="display: none;">Mostrar pad</button>
+      <div id="pad" style="display: none;">
+        <input type="text" id="pad-display" readonly />
+        <div id="numpad">
+          <button class="num-key" data-value="1">1</button>
+          <button class="num-key" data-value="2">2</button>
+          <button class="num-key" data-value="3">3</button>
+          <button class="num-key" data-value="4">4</button>
+          <button class="num-key" data-value="5">5</button>
+          <button class="num-key" data-value="6">6</button>
+          <button class="num-key" data-value="7">7</button>
+          <button class="num-key" data-value="8">8</button>
+          <button class="num-key" data-value="9">9</button>
+          <button id="clear">C</button>
+          <button class="num-key" data-value="0">0</button>
+          <button id="submit">S</button>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <style>
-    .tecla {
-      width: 60px;
-      height: 60px;
-      background-color: #222;
-      border: 2px solid #555;
-      border-radius: 8px;
-      color: white;
-      font-size: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-      transition: background-color 0.2s, transform 0.2s;
-    }
-
-    .tecla.destacar {
-      animation: parpadeoRapido 0.4s infinite;
-    }
-
-    @@keyframes parpadeoRapido {
-      0%, 100% { background-color: red; color: white; transform: scale(1.1); }
-      50% { background-color: #222; color: white; transform: scale(1); }
-    }
-  </style>
-  <script>
-    const sala3 = document.getElementById("sala3");
-    const mensaje = document.getElementById("mensaje");
-
-    const fases = [
-      { tecla: "ArrowUp", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase 1! Spam ↑ lo más rápido posible", tiempoLimite: 3000 },
-      { tecla: "ArrowDown", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase 2! Spam ↓ lo más rápido posible", tiempoLimite: 3500 },
-      { tecla: "ArrowLeft", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase 3! Spam ← lo más rápido posible", tiempoLimite: 4000 },
-      { tecla: "ArrowRight", imagen: "URL_DE_TU_IMAGEN_AQUI", mensaje: "¡Fase Final! Spam → lo más rápido posible", tiempoLimite: 4500 }
-    ];
-
-    const flechas = {
-      ArrowUp: document.getElementById("flechaUp"),
-      ArrowDown: document.getElementById("flechaDown"),
-      ArrowLeft: document.getElementById("flechaLeft"),
-      ArrowRight: document.getElementById("flechaRight")
-    };
-
-    let faseActual = 0;
-    let pulsaciones = 0;
-    let faseEnCurso = false;
-    let tiempoInicio = 0;
-    let temporizador = null;
-    const pulsacionesRequeridas = 15;
-    const pausaEntreFases = 2000;
-
-    function destacarFlecha(tecla) {
-      Object.values(flechas).forEach(el => el.classList.remove("destacar"));
-      if (flechas[tecla]) {
-        flechas[tecla].classList.add("destacar");
-      }
-    }
-
-    function iniciarFase() {
-      if (faseActual < fases.length) {
-        mensaje.textContent = "Preparando siguiente fase...";
-        sala3.style.backgroundImage = "none";
-        faseEnCurso = false;
-        destacarFlecha(null);
-
-        setTimeout(() => {
-          pulsaciones = 0;
-          faseEnCurso = true;
-          tiempoInicio = Date.now();
-
-          const fase = fases[faseActual];
-          sala3.style.backgroundImage = `url('${fase.imagen}')`;
-          mensaje.textContent = `${fase.mensaje} (0/${pulsacionesRequeridas})`;
-          destacarFlecha(fase.tecla);
-
-          clearTimeout(temporizador);
-          temporizador = setTimeout(() => {
-            if (faseEnCurso) {
-              faseEnCurso = false;
-              if (pulsaciones < pulsacionesRequeridas) {
-                mensaje.textContent = "¡Fallaste! Inténtalo de nuevo.";
-                sala3.style.backgroundImage = "none";
-                destacarFlecha(null);
-                faseActual = 0;
-                setTimeout(iniciarFase, pausaEntreFases);
-              }
-            }
-          }, fase.tiempoLimite);
-        }, pausaEntreFases);
-      } else {
-        mensaje.textContent = "¡Evento completado!";
-        sala3.style.backgroundImage = "url('')";
-        destacarFlecha(null);
-        document.getElementById("padbtn").style.display = "inline-block";
-      }
-    }
-
-    document.addEventListener("keydown", (event) => {
-      if (!faseEnCurso) return;
-
-      const fase = fases[faseActual];
-
-      if (event.key === fase.tecla) {
-        pulsaciones++;
-        mensaje.textContent = `${fase.mensaje} (${pulsaciones}/${pulsacionesRequeridas})`;
-
-        if (pulsaciones >= pulsacionesRequeridas) {
-          faseEnCurso = false;
-          clearTimeout(temporizador);
-          faseActual++;
-          destacarFlecha(null);
-          iniciarFase();
-        }
-      } else {
-        faseEnCurso = false;
-        clearTimeout(temporizador);
-        mensaje.textContent = "¡Tecla incorrecta! Inténtalo de nuevo.";
-        sala3.style.backgroundImage = "none";
-        destacarFlecha(null);
-        faseActual = 0;
-        setTimeout(iniciarFase, pausaEntreFases);
-      }
-    });
-
-    iniciarFase();
-  </script>
-  </section>
-  <section>
-  <button id="padbtn" style="display: none;">Mostrar pad</button>
-<div id="pad" style="display: none;">
-    <input type="text" id="pad-display" readonly />
-    <div id="numpad">
-      <button class="num-key" data-value="1">1</button>
-      <button class="num-key" data-value="2">2</button>
-      <button class="num-key" data-value="3">3</button>
-      <button class="num-key" data-value="4">4</button>
-      <button class="num-key" data-value="5">5</button>
-      <button class="num-key" data-value="6">6</button>
-      <button class="num-key" data-value="7">7</button>
-      <button class="num-key" data-value="8">8</button>
-      <button class="num-key" data-value="9">9</button>
-      <button class="num-key" data-value="0">0</button>
-      <button id="clear">C</button>
-      <button id="submit">S</button>
-    </div>
-  </div>
-  </section>
-</div>
+</body>

@@ -1,10 +1,149 @@
-<div>
-<form action='@Url.Action("ingresarLetra", "Home")' method="GET">
-<input type = "text" name = "letra" placeholder ="ingrese una letra">
-<input type = "submit" name = "Guardar">
-</form>
-<form action='@Url.Action("ingresarPalabra", "Home")' method="GET">
-<input type = "text" name = "palabra" placeholder ="arriesgar palabra">
-<input type = "submit" name = "Guardar">
-</form>
+@{
+    ViewData["Title"] = "Sala 2 - Ahorcado";
+    var palabraJugada = ViewBag.PalabraJugada as List<char> ?? new List<char>();
+    var letrasErradas = ViewBag.LetrasErradas as List<char> ?? new List<char>();
+    var intentos = ViewBag.Intentos;
+}
+
+<div class="sala2-container">
+    <h1>🎯 Sala 2 - Ahorcado</h1>
+
+    <div class="ahorcado-container">
+        <div class="palabra-container">
+            @foreach (var letra in palabraJugada)
+            {
+                <span class="letra">@letra</span>
+            }
+        </div>
+
+        <div class="letras-erradas">
+            <h3>❌ Letras incorrectas:</h3>
+            <div class="letras-erradas-container">
+                @foreach (var letra in letrasErradas)
+                {
+                    <span class="letra-errada">@letra</span>
+                }
+            </div>
+        </div>
+
+        <div class="intentos">
+            <p>Intentos restantes: <strong>@intentos</strong></p>
+        </div>
+
+        <div class="controles">
+            <form action='@Url.Action("IngresarLetra", "Home")' method="POST" class="form-letra">
+                <input type="text" 
+                       name="letra" 
+                       maxlength="1" 
+                       pattern="[a-zA-Z]" 
+                       placeholder="Ingresa una letra" 
+                       required 
+                       autocomplete="off">
+                <button type="submit">Probar letra</button>
+            </form>
+
+            <form action='@Url.Action("IngresarPalabra", "Home")' method="POST" class="form-palabra">
+                <input type="text" 
+                       name="palabra" 
+                       pattern="[a-zA-Z]+" 
+                       placeholder="Arriesgar palabra completa" 
+                       required 
+                       autocomplete="off">
+                <button type="submit">Arriesgar palabra</button>
+            </form>
+        </div>
+    </div>
 </div>
+
+<style>
+.sala2-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.ahorcado-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.palabra-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.letra {
+    width: 40px;
+    height: 40px;
+    border-bottom: 3px solid #333;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.letras-erradas {
+    margin: 20px 0;
+}
+
+.letras-erradas-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.letra-errada {
+    background: #ff4444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.intentos {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-letra, .form-palabra {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+</style>

@@ -8,6 +8,8 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private const string SALA_KEY = "Sala";
+    private const string QTE_TERMINADO_KEY = "QteTerminado";
+    private const string AHORCADO_KEY = "Ahorcado";
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -52,24 +54,123 @@ public class HomeController : Controller
     public IActionResult Sala2()
     {
         if (!ValidarProgresoSala(2)) return RedirectToAction("Salas");
+
+        var sala2 = ObjetoUtils.StringToObject<Sala2>(HttpContext.Session.GetString(AHORCADO_KEY));
+        if (sala2 == null)
+        {
+            sala2 = new Sala2();
+            sala2.crearRandom();
+            HttpContext.Session.SetString(AHORCADO_KEY, ObjetoUtils.ObjectToString(sala2));
+        }
+
+        ViewBag.PalabraJugada = sala2.palabraJugada;
+        ViewBag.LetrasErradas = sala2.letrasErradas;
+        ViewBag.Intentos = 6 - sala2.letrasErradas.Count;
+        
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult IngresarLetra(char letra)
+    {
+        if (!ValidarProgresoSala(2)) return RedirectToAction("Salas");
+
+        var sala2 = ObjetoUtils.StringToObject<Sala2>(HttpContext.Session.GetString(AHORCADO_KEY));
+        if (sala2 == null)
+        {
+            return RedirectToAction("Sala2");
+        }
+
+        if (sala2.ingresarLetra(letra))
+        {
+            // Ganó el juego
+            HttpContext.Session.SetString(SALA_KEY, "3");
+            return RedirectToAction("Sala3");
+        }
+
+        if (sala2.letrasErradas.Count >= 6)
+        {
+            // Perdió el juego
+            return RedirectToAction("Derrota");
+        }
+
+        HttpContext.Session.SetString(AHORCADO_KEY, ObjetoUtils.ObjectToString(sala2));
+        return RedirectToAction("Sala2");
+    }
+
+    [HttpPost]
+    public IActionResult IngresarPalabra(string palabra)
+    {
+        if (!ValidarProgresoSala(2)) return RedirectToAction("Salas");
+
+        var sala2 = ObjetoUtils.StringToObject<Sala2>(HttpContext.Session.GetString(AHORCADO_KEY));
+        if (sala2 == null)
+        {
+            return RedirectToAction("Sala2");
+        }
+
+        if (sala2.ingresarPalabra(palabra))
+        {
+            // Ganó el juego
+            HttpContext.Session.SetString(SALA_KEY, "3");
+            return RedirectToAction("Sala3");
+        }
+
+        // Si falla al arriesgar la palabra, pierde directamente
+        return RedirectToAction("Derrota");
     }
 
     public IActionResult Sala3(int clave)
     {
         if (!ValidarProgresoSala(3)) return RedirectToAction("Salas");
         
-        if(new Sala3().Verificar(clave))
+        string qteEstado = HttpContext.Session.GetString(QTE_TERMINADO_KEY);
+        if (qteEstado == null)
         {
-            HttpContext.Session.SetString(SALA_KEY, "4");
-            return RedirectToAction("Sala4");
+            HttpContext.Session.SetString(QTE_TERMINADO_KEY, "false");
+            qteEstado = "false";
         }
+        ViewBag.QteTerminado = qteEstado == "true";
+
+        // Solo verificar la clave si el QTE está completado
+        if (clave != 0) // Si se envió una clave
+        {
+            if (qteEstado != "true")
+            {
+                return View(); // Si el QTE no está completado, no procesar la clave
+            }
+
+            if(new Sala3().Verificar(clave))
+            {
+                HttpContext.Session.SetString(SALA_KEY, "4");
+                return RedirectToAction("Sala4");
+            }
+        }
+        
         return View();
     }
 
-    public IActionResult Sala4()
+    [HttpPost]
+    public IActionResult CompletarQte()
+    {
+        HttpContext.Session.SetString(QTE_TERMINADO_KEY, "true");
+        return Ok();
+    }
+
+    public IActionResult Sala4(int clave)
     {
         if (!ValidarProgresoSala(4)) return RedirectToAction("Salas");
+        
+        if (clave != 0) // Si se envió una clave
+        {
+            if(new Sala4().Verificar(clave))
+            {
+                HttpContext.Session.SetString(SALA_KEY, "5");
+                return RedirectToAction("Sala5");
+            }
+            return RedirectToAction("Derrota");
+        }
+        
         return View();
     }
 
@@ -117,6 +218,11 @@ public class HomeController : Controller
 
     public IActionResult Derrota()
     {
+        // Si viene de la sala 2 (ahorcado), reiniciar el juego
+        if (HttpContext.Session.GetString(SALA_KEY) == "2")
+        {
+            HttpContext.Session.Remove(AHORCADO_KEY);
+        }
         return View();
     }
 
