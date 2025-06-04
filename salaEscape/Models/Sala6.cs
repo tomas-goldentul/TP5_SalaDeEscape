@@ -7,8 +7,11 @@ public class Sala6
     public List<char> LetrasRandom { get; private set; } = new List<char>();
     public List<char> LetrasIngresadas { get; private set; } = new List<char>();
     public int Jugadas { get; private set; } = 0;
-
-    public void CrearRandom()
+    public const int Clave = 39765;
+    public bool Verificar(int clave)
+    {
+        return clave == Clave;
+    }public void CrearRandom()
     {
         Random rd = new Random();
         int numRandom = rd.Next(colores.Length);
@@ -55,4 +58,7 @@ public class Sala6
     {
         return LetrasIngresadas;
     }
+
 }
+
+    

@@ -1,6 +1,6 @@
 <body>
 <div id="dialogo"></div>
-
+mostrarTexto("", 50)
   <script>
     const texto = "";
     const velocidad = 50;
@@ -19,12 +19,12 @@
   </script>
   <form action='@Url.Action("salas", "Home")' method="POST">
   <input
-    type="number"
-    name="codigo"
+    type="text"
+    name="clave"
     placeholder="Ordená las pistas"
     required
-    min="10000"
-    max="99999"
+    minlength="5"
+    maxlength="5"
   />
   <input type="submit" value="Guardar" />
 </form>

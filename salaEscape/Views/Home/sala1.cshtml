@@ -31,7 +31,7 @@
     </div>
 
     <form action='@Url.Action("Sala1", "Home")' method="POST">
-        <input type="number" name="clave" placeholder="Ordená las pistas" required min="10000" max="99999" />
+        <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5" />
         <input type="submit" value="Guardar" />
     </form>
 </div>

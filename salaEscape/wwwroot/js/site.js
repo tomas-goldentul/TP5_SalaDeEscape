@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (!rata.classList.contains('golpeada')) {
                         posicionarRataAleatoriamente(rata);
                     }
-                }, Math.random() * 1000 + 1500);
+                }, Math.random() * 500 + 500);
             }
         }
 
@@ -257,7 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('Ratas golpeadas:', ratasGolpeadas);
                 if (ratasGolpeadas === NUM_RATAS) {
                     setTimeout(() => {
-                        alert('¡Has descubierto el código secreto!');
                         mostrarFormularioClave(CODIGO);
                     }, 1000);
                 }

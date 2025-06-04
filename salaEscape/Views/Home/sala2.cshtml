@@ -6,7 +6,7 @@
 }
 
 <div class="sala2-container">
-    <h1>🎯 Sala 2 - Ahorcado</h1>
+    <h1>Sala 2 - Ahorcado</h1>
 
     <div class="ahorcado-container">
         <div class="palabra-container">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="letras-erradas">
-            <h3>❌ Letras incorrectas:</h3>
+            <h3>Letras incorrectas:</h3>
             <div class="letras-erradas-container">
                 @foreach (var letra in letrasErradas)
                 {
@@ -32,15 +32,22 @@
 
         <div class="controles">
             <form action='@Url.Action("IngresarLetra", "Home")' method="POST" class="form-letra">
-                <input type="text" 
-                       name="letra" 
-                       maxlength="1" 
-                       pattern="[a-zA-Z]" 
-                       placeholder="Ingresa una letra" 
-                       required 
-                       autocomplete="off">
-                <button type="submit">Probar letra</button>
+    <input type="text" 
+           name="letra" 
+           maxlength="1" 
+           pattern="[a-zA-Z]" 
+           placeholder="Ingresa una letra" 
+           required 
+           autocomplete="off">
+           <button type="submit" id="submitLetra">Probar Letra</button>
             </form>
+           
+
+  <script>
+    document.getElementById('submitLetra').addEventListener('click', function () {
+      this.textContent = this.textContent.toLowerCase();
+    });
+  </script>
 
             <form action='@Url.Action("IngresarPalabra", "Home")' method="POST" class="form-palabra">
                 <input type="text" 
@@ -49,26 +56,13 @@
                        placeholder="Arriesgar palabra completa" 
                        required 
                        autocomplete="off">
-                <button type="submit">Arriesgar palabra</button>
+                <button type="submit" id="submitLetra">Arriesgar palabra</button>
             </form>
         </div>
     </div>
 </div>
 
 <style>
-.sala2-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.ahorcado-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 
 .palabra-container {
     margin: 20px 0;
