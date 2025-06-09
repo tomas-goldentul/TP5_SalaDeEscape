@@ -51,17 +51,31 @@ footer {
 
 /* Estilos Sala1 */
 .pista {
-  display: none;
+  display: inline-block;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  flex-direction: column;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0);
+}
+.pista1{
+top: 10vh;
+left: 20vh;
+}
+.pista2{
+  top: 30vh;
+  left: 70vh;
+}
+.pista3{
+  top: 55vh;
+  left: 40vh;
+}
+.pista4{
+  top: 80vh;
+  left: 10vh;
+}
+.pista5{
+  top: 25vh;
+  left: 80vh;
 }
 
 .pista img {
@@ -240,7 +254,6 @@ footer {
     background-color: #45a049;
 }
 
-/* Estilos Sala6 */
 #pad {
   max-width: 200px;
   margin: 20px auto;

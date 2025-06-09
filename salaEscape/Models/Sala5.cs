@@ -7,4 +7,14 @@ public class Sala5
     {
         return clave == Clave;
     }
+    public List<string> cargarPalabras()
+    {
+        List<string> listaPalabras = new List<string>() { "manzana" };
+        return listaPalabras;
+    }
+    public List<string> compararPalabra(string wordle){
+        List<string> respuesta = new List<string>();
+        
+        return respuesta;
+    }
 }

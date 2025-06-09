@@ -181,37 +181,58 @@ public class HomeController : Controller
     }
 
 
+// GET: Muestra la página Sala6
+public IActionResult Sala6()
+{
+    if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
 
-    public IActionResult Sala6(char letra, int clave)
+    var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
+
+    ViewBag.LetrasRandom = sala6.LetrasRandom;
+    ViewBag.LetrasIngresadas = sala6.LetrasIngresadas;
+    ViewBag.Jugadas = sala6.Jugadas;
+    ViewBag.Perdio = sala6.Perdio;
+
+    return View();
+}
+
+// POST: Recibe la letra y la clave (si es que usas la clave también)
+[HttpPost]
+public IActionResult Sala6(char? letra, int? clave)
+{
+    if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
+
+    var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
+
+    if (letra != null)
     {
-        if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
-        
-        var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
-        if(letra != null){
-        if (sala6.Jugar(letra))
+        if (sala6.Jugar(letra.Value))
         {
             if (sala6.HaGanado())
             {
                 return RedirectToAction("SalaFinal");
             }
             return RedirectToAction("Derrota");
-        }}
-        if(clave != null){
-        if(new Sala6().Verificar(clave))
+        }
+    }
+    if (clave != null)
+    {
+        if (new Sala6().Verificar(clave.Value))
         {
             HttpContext.Session.SetString(SALA_KEY, "6");
             return RedirectToAction("Sala6");
-        }}
-
-        HttpContext.Session.SetString("Sala6", ObjetoUtils.ObjectToString(sala6));
-        
-        ViewBag.LetrasRandom = sala6.LetrasRandom;
-        ViewBag.LetrasIngresadas = sala6.LetrasIngresadas;
-        ViewBag.Jugadas = sala6.Jugadas;
-        ViewBag.Perdio = sala6.Perdio;
-        
-        return View();
+        }
     }
+
+    HttpContext.Session.SetString("Sala6", ObjetoUtils.ObjectToString(sala6));
+
+    ViewBag.LetrasRandom = sala6.LetrasRandom;
+    ViewBag.LetrasIngresadas = sala6.LetrasIngresadas;
+    ViewBag.Jugadas = sala6.Jugadas;
+    ViewBag.Perdio = sala6.Perdio;
+
+    return View();
+}
 
     public IActionResult SalaFinal()
     {
@@ -240,3 +261,4 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
+  

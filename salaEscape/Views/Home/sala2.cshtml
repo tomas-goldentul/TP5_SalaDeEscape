@@ -6,7 +6,6 @@
 }
 
 <div class="sala2-container">
-    <h1>Sala 2 - Ahorcado</h1>
 
     <div class="ahorcado-container">
         <div class="palabra-container">
@@ -28,9 +27,6 @@
 
         <div class="intentos">
             <p>Intentos restantes: <strong>@intentos</strong></p>
-        </div>
-
-        <div class="controles">
             <form action='@Url.Action("IngresarLetra", "Home")' method="POST" class="form-letra">
     <input type="text" 
            name="letra" 
@@ -63,81 +59,140 @@
 </div>
 
 <style>
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #1b2b1b;
+    margin: 0;
+    padding: 0;
+    color: #f5f0e6;
+  }
 
-.palabra-container {
-    margin: 20px 0;
+  .sala2-container {
+    background-color: #2e3f2e;
+    width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid #a19b88;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .sala2-container h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #d5cba3;
+    margin-bottom: 30px;
+    font-family: 'Garamond', serif;
+    letter-spacing: 1px;
+  }
+
+  .palabra-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
-}
+    gap: 14px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
 
-.letra {
-    width: 40px;
-    height: 40px;
-    border-bottom: 3px solid #333;
-    font-size: 24px;
+  .letra {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #3e4f3e;
+    color: #e7e2d2;
+    border: 2px solid #6c7a6c;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-}
+    font-family: 'Georgia', serif;
+  }
 
-.letras-erradas {
-    margin: 20px 0;
-}
+  .letras-erradas {
+    text-align: center;
+    margin-bottom: 25px;
+  }
 
-.letras-erradas-container {
+  .letras-erradas h3 {
+    margin-bottom: 10px;
+    color: #b56e6e;
+    font-size: 20px;
+    font-family: 'Garamond', serif;
+  }
+
+  .letras-erradas-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
-}
+    gap: 10px;
+  }
 
-.letra-errada {
-    background: #ff4444;
-    color: white;
-    padding: 5px 10px;
+  .letra-errada {
+    background-color: #5a2c2c;
+    color: #f4e9e0;
+    font-weight: bold;
+    padding: 8px 14px;
     border-radius: 5px;
     text-transform: uppercase;
-}
+    box-shadow: 0 2px 5px rgba(90, 44, 44, 0.4);
+    font-family: 'Georgia', serif;
+  }
 
-.intentos {
+  .intentos {
+    text-align: center;
     font-size: 18px;
-    margin: 20px 0;
-}
+    margin-bottom: 25px;
+    color: #d5cba3;
+  }
 
-.controles {
+  .controles {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
+    gap: 15px;
+    max-width: 500px;
     margin: 0 auto;
-}
+  }
 
-.form-letra, .form-palabra {
+  .form-letra, .form-palabra {
     display: flex;
     gap: 10px;
-}
+  }
 
-input[type="text"] {
+  input[type="text"] {
     flex: 1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    padding: 12px;
     font-size: 16px;
-}
+    background-color: #444f44;
+    color: #f5f0e6;
+    border: 2px solid #6c7a6c;
+    border-radius: 6px;
+    transition: border-color 0.2s ease-in-out;
+    font-family: 'Georgia', serif;
+  }
 
-button {
-    padding: 10px 20px;
-    background: #4CAF50;
-    color: white;
+  input[type="text"]:focus {
+    border-color: #a9bfa9;
+    outline: none;
+  }
+
+  button {
+    padding: 12px 20px;
+    background-color: #607d60;
+    color: #fdfdfd;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s;
-}
+    box-shadow: 0 2px 4px rgba(60, 90, 60, 0.3);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-family: 'Georgia', serif;
+  }
 
-button:hover {
-    background: #45a049;
-}
+  button:hover {
+    background-color: #4a5f4a;
+    box-shadow: none;
+  }
 </style>
+

@@ -18,6 +18,8 @@ public class Sala2
     {
         bool finalizo = false;
         palabraJugada.Clear();
+            letra = char.ToLower(letra); 
+
         if (palabraAdivinar.Contains(letra))
         {
             letrasAdivinadas.Add(letra);
@@ -47,7 +49,7 @@ public class Sala2
     public bool ingresarPalabra(string palabra)
     {
         bool adivino = false;
-        if (palabra == palabraAdivinar)
+        if (palabra.ToLower() == palabraAdivinar)
         {
             adivino = true;
         }

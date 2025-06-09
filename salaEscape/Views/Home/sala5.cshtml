@@ -1,22 +1,12 @@
 <body>
-<div id="dialogo"></div>
-mostrarTexto("", 50)
-  <script>
-    const texto = "";
-    const velocidad = 50;
-    const dialogo = document.getElementById("dialogo");
-    let indice = 0;
-
-    function mostrarTexto() {
-      if (indice < texto.length) {
-        dialogo.textContent += texto[indice];
-        indice++;
-        setTimeout(mostrarTexto, velocidad);
-      }
-    }
-
-    mostrarTexto();
-  </script>
+<form action='@Url.Action("IngresarWordle", "Home")' method="POST" class="form-wordle">
+                <input type="text" 
+                       name="wordle" 
+                       pattern="[a-zA-Z]+" 
+                       placeholder="Palabra" 
+                       required 
+                       autocomplete="off">
+                <button type="submit" id="submitLetra">Comprobar</button>
   <form action='@Url.Action("salas", "Home")' method="POST">
   <input
     type="text"

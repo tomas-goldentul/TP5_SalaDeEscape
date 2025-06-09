@@ -1,42 +1,42 @@
-@{
-    ViewData["Title"] = "Sala 6 - Simón Dice";
+    @{
+        ViewData["Title"] = "Sala 6 - Simón Dice";
 
-    var letrasRandom = ViewBag.LetrasRandom as List<char> ?? new List<char>();
-    var letrasIngresadas = ViewBag.LetrasIngresadas as List<char> ?? new List<char>();
-    var jugadas = ViewBag.Jugadas;
-    var perdio = ViewBag.Perdio;
-}
+        var letrasRandom = ViewBag.LetrasRandom as List<char> ?? new List<char>();
+        var letrasIngresadas = ViewBag.LetrasIngresadas as List<char> ?? new List<char>();
+        var jugadas = ViewBag.Jugadas;
+        var perdio = ViewBag.Perdio;
+    }
 
-<div class="sala6-container">
-    <h1>🎮 Sala 6 - Simón Dice</h1>
+    <div class="sala6-container">
+        <h1>🎮 Sala 6 - Simón Dice</h1>
 
-    <div class="secuencia-container">
-        <h3>🔁 Secuencia generada (colores):</h3>
-        <p>
-            @foreach (var letra in letrasRandom)
-            {
-                <span class="letra-random">@letra</span>
-            }
-        </p>
+        <div class="secuencia-container">
+            <h3>🔁 Secuencia generada (colores):</h3>
+            <p>
+                @foreach (var letra in letrasRandom)
+                {
+                    <span class="letra-random">@letra</span>
+                }
+            </p>
+        </div>
+
+        <div class="secuencia-ingresada">
+            <h3>📝 Tu secuencia ingresada:</h3>
+            <p>
+                @foreach (var letra in letrasIngresadas)
+                {
+                    <span class="letra-ingresada">@letra</span>
+                }
+            </p>
+        </div>
+
+        <div class="jugadas-info">
+            <p>Jugadas realizadas: <strong>@jugadas</strong></p>
+        </div>
+
+        <form asp-action="Sala6" method="post" class="form-simon">
+            <label for="letra">Ingresá la primera letra del color (R, B, G, Y):</label>
+            <input type="text" name="letra" id="letra" maxlength="1" required pattern="[RBGYrbgy]"/>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-
-    <div class="secuencia-ingresada">
-        <h3>📝 Tu secuencia ingresada:</h3>
-        <p>
-            @foreach (var letra in letrasIngresadas)
-            {
-                <span class="letra-ingresada">@letra</span>
-            }
-        </p>
-    </div>
-
-    <div class="jugadas-info">
-        <p>Jugadas realizadas: <strong>@jugadas</strong></p>
-    </div>
-
-    <form asp-action="Sala6" method="post" class="form-simon">
-        <label for="letra">Ingresá la primera letra del color (R, B, G, Y):</label>
-        <input type="text" name="letra" id="letra" maxlength="1" required pattern="[RBGYrbgy]"/>
-        <button type="submit">Enviar</button>
-    </form>
-</div>
