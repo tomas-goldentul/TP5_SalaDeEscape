@@ -6,20 +6,15 @@ public static class ObjetoUtils
 {
     public static string ObjectToString<T>(T? obj)
     {
-        return obj != null ? JsonConvert.SerializeObject(obj) : string.Empty;
+        return JsonConvert.SerializeObject(obj);
     }
 
     public static T? StringToObject<T>(string? txt)
     {
         if (string.IsNullOrEmpty(txt))
             return default;
-        try
-        {
+        else
             return JsonConvert.DeserializeObject<T>(txt);
-        }
-        catch
-        {
-            return default;
-        }
+
     }
 }

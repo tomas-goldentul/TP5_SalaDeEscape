@@ -1,12 +1,32 @@
 <body>
+<p>@ViewBag.palabraAdivinar</p>
+@{
+  if(ViewBag.respuesta != null){
+  int caracteres = ViewBag.respuesta.Count();
+  for(int i = 1; i<=caracteres; i= i+2){
+    if((i+1) == 'v'){
+    <h2 class = "verde">respuesta[i]</h2>
+    } else if((i+1) == 'a'){
+    <h2 class = "amarillo">respuesta[i]</h2>
+    } else{
+    <h2 class = "rojo">respuesta[i]</h2>
+    }
+  }
+  }
+}
+
+<div>
 <form action='@Url.Action("IngresarWordle", "Home")' method="POST" class="form-wordle">
-                <input type="text" 
-                       name="wordle" 
-                       pattern="[a-zA-Z]+" 
-                       placeholder="Palabra" 
-                       required 
-                       autocomplete="off">
-                <button type="submit" id="submitLetra">Comprobar</button>
+    <input type="text" 
+      name="wordle" 
+      pattern="[a-zA-Z]+" 
+      placeholder="Palabra" 
+      required 
+      autocomplete="off">
+      <button type="submit" id="submitWordle">Comprobar</button>
+    </form>
+  </div>
+  <div id="submitCodigo" style="display: none;">
   <form action='@Url.Action("salas", "Home")' method="POST">
   <input
     type="text"
@@ -14,8 +34,25 @@
     placeholder="Ordená las pistas"
     required
     minlength="5"
-    maxlength="5"
-  />
-  <input type="submit" value="Guardar" />
+    maxlength="5">
+  <input type="submit" value="Guardar">
 </form>
+</div>
+<style>
+.verde{
+  background-color= green;
+}
+.amarillo{
+  background-color= yellow;
+}
+.rojo{
+  background-color= red;
+}
+</style>
+@if(ViewBag.adivinoPalabra){
+  <style>
+  #submitCodigo{
+  display:inline-block;}
+  </style>
+}
 </body>

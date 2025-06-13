@@ -23,16 +23,45 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+/* Estilos para todas las salas */
+/* Estilos Sala1 */
 .sala1{
   background-image: url("images/sala1.jpg");
 }
 .pista1, .pista2, .pista3, .pista4, .pista5{
   display: none;
 }
-/* Estilos para todas las salas */
+
 .derrota-container {
   text-align: center;
   padding: 50px;
+}
+.index div {
+  display: flexbox;
+  margin-left: 45%;
+  margin-bottom: 2px;
+  background-color: #7a7979;
+  width: 3%;
+  text-align: center;
+  padding: 10px;
+  border: 3px solid #555;
+  border-radius: 10px;
+  
+}
+
+.index div a{
+  text-decoration: none;
+  font-size: 1em;
+  color: rgb(212, 205, 205);
+}
+.index div:hover{
+  padding: 12px;
+  border: 4px solid orange;
+
+
+}
+.index div a:hover{
+  color: #ffcc00;
 }
 
 .btn-reintentar {
@@ -49,7 +78,6 @@ footer {
   background-color: #c82333;
 }
 
-/* Estilos Sala1 */
 .pista {
   display: inline-block;
   position: fixed;
@@ -57,6 +85,19 @@ footer {
   height: 15px;
   background: rgba(0, 0, 0, 0);
 }
+.historia div{
+  border: 3px solid darkgreen;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px green;
+  width: 40%;
+  margin-left: 27%;
+  margin-top: 6%;
+  padding: 1%;
+}
+.historia div:hover{
+  box-shadow: none;
+}
+
 .pista1{
 top: 10vh;
 left: 20vh;
@@ -107,6 +148,10 @@ left: 20vh;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+.sala3-container{
+  background-image: url("/images/fondoSala30.png");
+
 }
 
 .sala3-container {

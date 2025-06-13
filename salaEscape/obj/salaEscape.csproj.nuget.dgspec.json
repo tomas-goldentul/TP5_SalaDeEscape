@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\salaEscape.csproj": {}
+    "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\salaEscape.csproj": {
+    "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\salaEscape.csproj",
+        "projectUniqueName": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
         "projectName": "salaEscape",
-        "projectPath": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\salaEscape.csproj",
+        "projectPath": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
         "packagesPath": "C:\\Users\\49319223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\obj\\",
+        "outputPath": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

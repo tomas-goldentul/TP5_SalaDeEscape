@@ -1,123 +1,123 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\css\\site.css",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\favicon.ico",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\bate.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\bate.png",
       "PackagePath": "staticwebassets\\images\\bate.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\ejemploSala.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\ejemploSala.png",
       "PackagePath": "staticwebassets\\images\\ejemploSala.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\fondoSala30.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala30.png",
       "PackagePath": "staticwebassets\\images\\fondoSala30.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\fondoSala31.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala31.png",
       "PackagePath": "staticwebassets\\images\\fondoSala31.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\fondoSala32.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala32.png",
       "PackagePath": "staticwebassets\\images\\fondoSala32.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\fondoSala33.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala33.png",
       "PackagePath": "staticwebassets\\images\\fondoSala33.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\fondoSala34.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala34.png",
       "PackagePath": "staticwebassets\\images\\fondoSala34.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\fondoSalas.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSalas.png",
       "PackagePath": "staticwebassets\\images\\fondoSalas.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\pista1.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista1.png",
       "PackagePath": "staticwebassets\\images\\pista1.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\pista2.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista2.png",
       "PackagePath": "staticwebassets\\images\\pista2.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\pista3.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista3.png",
       "PackagePath": "staticwebassets\\images\\pista3.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\pista4.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista4.png",
       "PackagePath": "staticwebassets\\images\\pista4.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\pista5.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista5.png",
       "PackagePath": "staticwebassets\\images\\pista5.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\puerta.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta.png",
       "PackagePath": "staticwebassets\\images\\puerta.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\images\\rata.png",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\rata.png",
       "PackagePath": "staticwebassets\\images\\rata.png"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\js\\site.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\SalaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "Z:\\prog\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

@@ -168,35 +168,29 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Sala5(int clave)
+    public IActionResult sala5(string wordle, int clave)
     {
         if (!ValidarProgresoSala(5)) return RedirectToAction("Salas");
-        
-        if(new Sala5().Verificar(clave))
+        bool adivinoPalabra = false;
+        int intentos = 0;
+        if (intentos == 0)
         {
-            HttpContext.Session.SetString(SALA_KEY, "6");
-            return RedirectToAction("Sala6");
+            Sala5 Sala5 = new Sala5();
+            Sala5.crearRandom();
+        } else{
+            ViewBag.respuesta = Sala5.compararPalabra(wordle);
+            intentos++;
+            adivinoPalabra = Sala5.adivinaPalabra(wordle);
+            if(adivinoPalabra){
+                ViewBag.adivinoPalabra = adivinoPalabra;
+            }
+            if(Sala5.Verificar(clave)){
+                HttpContext.Session.SetString(SALA_KEY, "6");
+            }
         }
         return View();
     }
 
-
-// GET: Muestra la página Sala6
-public IActionResult Sala6()
-{
-    if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
-
-    var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
-
-    ViewBag.LetrasRandom = sala6.LetrasRandom;
-    ViewBag.LetrasIngresadas = sala6.LetrasIngresadas;
-    ViewBag.Jugadas = sala6.Jugadas;
-    ViewBag.Perdio = sala6.Perdio;
-
-    return View();
-}
-
-// POST: Recibe la letra y la clave (si es que usas la clave también)
 [HttpPost]
 public IActionResult Sala6(char? letra, int? clave)
 {
@@ -260,5 +254,7 @@ public IActionResult Sala6(char? letra, int? clave)
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+  
+
 }
   
