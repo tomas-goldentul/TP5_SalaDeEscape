@@ -25,13 +25,94 @@ footer {
 }
 /* Estilos para todas las salas */
 /* Estilos Sala1 */
-.sala1{
-  background-image: url("images/sala1.jpg");
+#sala1{
+  background-image: url("/images/sala1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-.pista1, .pista2, .pista3, .pista4, .pista5{
-  display: none;
+.pista{
+  position: fixed;
+  width: 90%;
+  height: 100%;
+  z-index: 1000;
+}
+.pista img{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+}
+.cerrar{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.493);
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  position: fixed;
+  top: 5%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+#pista1 .cerrar{
+  left: 67.5%;
 }
 
+.boton-pista {
+  position: fixed;
+  background-color: #fffbe600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 14px;
+}
+
+#boton-pista1 { left: 5vw; bottom: 1vh; padding: 26px 95px; rotate: 170deg;}
+#boton-pista2 { left: 32.5vw; bottom: 36.5vh; padding: 5px 32px; rotate: 178deg;}
+#boton-pista3 { left: 59.5vw; bottom: 72vh; padding: 32px 5px; rotate: 172deg;}
+#boton-pista4 { left: 83vw; bottom: 8.5vh; padding: 20px 73px; rotate: 16deg;}
+#boton-pista5 { left: 46vw; bottom: 18vh; padding: 13px 28px; rotate: 170deg;}
+
+.form-sala1{
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: rgba(30, 20, 10, 0.2);
+}
+.form-sala1 input[type="text"] {
+  background-color: rgba(20, 10, 0, 0.596);
+  color: #d8c8a0;
+  border: none;
+  border-bottom: 1px solid #776b52;
+  font-family: monospace;
+  font-size: 18px;
+  padding: 8px 12px;
+  width: 220px;
+}
+.form-sala1 input[type="submit"] {
+  background-color: rgba(50, 40, 20, 0.76);
+  color: #d8c8a0;
+  border: none;
+  font-family: monospace;
+  font-size: 18px;
+  padding: 8px 16px;
+}
+
+/* Estilos Sala2 */
 .derrota-container {
   text-align: center;
   padding: 50px;
@@ -78,12 +159,6 @@ footer {
   background-color: #c82333;
 }
 
-.pista {
-  display: inline-block;
-  position: fixed;
-  width: 15px;
-  height: 15px;
-  background: rgba(0, 0, 0, 0);
 }
 .historia div{
   border: 3px solid darkgreen;
@@ -98,46 +173,7 @@ footer {
   box-shadow: none;
 }
 
-.pista1{
-top: 10vh;
-left: 20vh;
-}
-.pista2{
-  top: 30vh;
-  left: 70vh;
-}
-.pista3{
-  top: 55vh;
-  left: 40vh;
-}
-.pista4{
-  top: 80vh;
-  left: 10vh;
-}
-.pista5{
-  top: 25vh;
-  left: 80vh;
-}
 
-.pista img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-
-.cerrar {
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 30px;
-}
-
-.cerrar:hover {
-  color: red;
-}
 
 /* Estilos Sala3 */
 #sala3{

@@ -1,37 +1,37 @@
 @{
     ViewData["Title"] = "Sala 1";
 }
-
-<div class="sala1-container">
-    <button onclick="mostrarPista('pista1')">Pista 1</button>
-    <button onclick="mostrarPista('pista2')">Pista 2</button>
-    <button onclick="mostrarPista('pista3')">Pista 3</button>
-    <button onclick="mostrarPista('pista4')">Pista 4</button>
-    <button onclick="mostrarPista('pista5')">Pista 5</button>
-
-    <div class="pista" id="pista1">
-        <span class="cerrar" onclick="cerrarPista('pista1')">×</span>
-        <img src="/images/pista1.png" alt="">
-    </div>
-    <div class="pista" id="pista2">
-        <span class="cerrar" onclick="cerrarPista('pista2')">×</span>
-        <img src="/images/pista2.png" alt="">
-    </div>
-    <div class="pista" id="pista3">
-        <span class="cerrar" onclick="cerrarPista('pista3')">×</span>
-        <img src="/images/pista3.png" alt="">
-    </div>
-    <div class="pista" id="pista4">
-        <span class="cerrar" onclick="cerrarPista('pista4')">×</span>
-        <img src="/images/pista4.png" alt="">
-    </div>
-    <div class="pista" id="pista5">
-        <span class="cerrar" onclick="cerrarPista('pista5')">×</span>
-        <img src="/images/pista5.png" alt="">
-    </div>
-
-    <form action='@Url.Action("Sala1", "Home")' method="POST">
+<body id="sala1">
+<form action='@Url.Action("Sala1", "Home")' method="POST" class="form-sala1">
         <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5" />
-        <input type="submit" value="Guardar" />
+        <input type="submit" value="Seguro es así" />
     </form>
+<div class="sala1-container">
+    <button onclick="mostrarPista('pista1')" class="boton-pista" id="boton-pista1"></button>
+    <button onclick="mostrarPista('pista2')" class="boton-pista" id="boton-pista2"></button>
+    <button onclick="mostrarPista('pista3')" class="boton-pista" id="boton-pista3"></button>
+    <button onclick="mostrarPista('pista4')" class="boton-pista" id="boton-pista4"></button>
+    <button onclick="mostrarPista('pista5')" class="boton-pista" id="boton-pista5"></button>
+
+    <div class="pista" id="pista1" style="display: none;">
+        <img src="/images/pista1.png" alt="">
+        <span class="cerrar" onclick="cerrarPista('pista1')">×</span>
+    </div>
+    <div class="pista" id="pista2" style="display: none;">
+        <img src="/images/pista2.png" alt="">
+        <span class="cerrar" onclick="cerrarPista('pista2')">×</span>
+    </div>
+    <div class="pista" id="pista3" style="display: none;">
+        <img src="/images/pista3.png" alt="">
+        <span class="cerrar" onclick="cerrarPista('pista3')">×</span>
+    </div>
+    <div class="pista" id="pista4" style="display: none;">
+        <img src="/images/pista4.png" alt="">
+        <span class="cerrar" onclick="cerrarPista('pista4')">×</span>
+    </div>
+    <div class="pista" id="pista5" style="display: none;">
+        <img src="/images/pista5.png" alt="">
+        <span class="cerrar" onclick="cerrarPista('pista5')">×</span>
+    </div>
 </div>
+</body>
