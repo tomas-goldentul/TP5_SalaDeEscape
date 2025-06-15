@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\TP5_SalaDeEscape-1\\salaEscape\\salaEscape.csproj",
+      "projectUniqueName": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
       "projectName": "salaEscape",
-      "projectPath": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\TP5_SalaDeEscape-1\\salaEscape\\salaEscape.csproj",
+      "projectPath": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
       "packagesPath": "C:\\Users\\Manuel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\TP5_SalaDeEscape-1\\salaEscape\\obj\\",
+      "outputPath": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\salaEscape\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Manuel\\AppData\\Roaming\\NuGet\\NuGet.Config"
