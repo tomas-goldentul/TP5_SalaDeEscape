@@ -191,7 +191,7 @@ public class HomeController : Controller
         return View();
     }
 
-[HttpPost]
+
 public IActionResult Sala6(char? letra, int? clave)
 {
     if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");

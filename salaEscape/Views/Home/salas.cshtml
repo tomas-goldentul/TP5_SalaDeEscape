@@ -1,51 +1,8 @@
-<!--<@{
-    var salaMaxima = int.Parse(Context.Session.GetString("Sala") ?? "1");
-}
-<section>
-<div>
-<a href='@Url.Action("sala1")'alt=""><img src="/images/puerta.png" alt="" class="puerta"></a>
-</div>
-<div>
-@{if(salaMaxima >= 2){
-<a href='@Url.Action("sala2")'alt=""><img src="/images/puerta.png" alt="" class="puerta"></a>}else{
-    <img src="/images/puertaCerrada.jpg" alt="">
-}}
-</div>
-<div>
-@{if(salaMaxima >= 3){
-<a href='@Url.Action("sala3")'alt=""><img src="/images/puerta.png" alt="" class="puerta"></a>}else{
-    <img src="/images/puertaCerrada.jpg" alt="">
-}}
-</div>
-<div>
-@{if(salaMaxima >= 4){
-<a href='@Url.Action("sala4")'alt=""><img src="/images/puerta.png" alt="" class="puerta"></a>}else{
-    <img src="/images/puertaCerrada.jpg" alt="">
-}}
-</div>
-<div>
-@{if(salaMaxima >= 5){
-<a href='@Url.Action("sala5")'alt=""><img src="/images/puerta.png" alt="" class="puerta"></a>}else{
-    <img src="/images/puertaCerrada.jpg" alt="">
-}}
-</div>
-<div>
-@{if(salaMaxima >= 6){
-<a href='@Url.Action("sala6")'alt=""><img src="/images/puerta.png" alt="" class="puerta"></a>}else{
-    <img src="/images/puertaCerrada.jpg" alt="">
-}}
-</div>
-<style>
-    .puerta{
-        width: 10%;
-        float: left;
-    }
-</style>
-</section>
--->
+<body id = "salas">
 <a href='@Url.Action("sala1")'alt="">sala 1</a>
 <a href='@Url.Action("sala2")'alt="">sala 2</a>
 <a href='@Url.Action("sala3")'alt="">sala 3</a>
 <a href='@Url.Action("sala4")'alt="">sala 4</a>
 <a href='@Url.Action("sala5")'alt="">sala 5</a>
 <a href='@Url.Action("sala6")'alt="">sala 6</a>
+</body>

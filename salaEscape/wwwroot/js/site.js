@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const clearButton = document.getElementById("clear");
         const submitButton = document.getElementById("submit");
         const padbtn = document.getElementById("padbtn");
-
         if (display && numKeys.length > 0) {
             numKeys.forEach((key) => {
                 key.addEventListener("click", () => {
@@ -59,10 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Si el QTE está completado, mostrar estado final y salir
         if (qteTerminado === true) {
-            mensaje.textContent = "¡Evento completado!";
+            document.getElementById("qte").style.display = "none";
             sala3.style.backgroundImage = "url('/images/fondoSala35.png')";
             document.getElementById("padbtn").style.display = "inline-block";
-            return; // Solo salimos de la parte del QTE
+
         }
 
         // Código del QTE
@@ -158,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         iniciarFase();
                     }
                 }
-            } else {
+            }else{
                 faseEnCurso = false;
                 clearTimeout(temporizador);
                 mensaje.textContent = "¡Tecla incorrecta! Inténtalo de nuevo.";
