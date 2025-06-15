@@ -172,7 +172,7 @@ public class HomeController : Controller
     {
         if (!ValidarProgresoSala(5)) return RedirectToAction("Salas");
         bool adivinoPalabra = false;
-        int intentos = 0;
+        int intentos = Sala5.intentos;
         if (intentos == 0)
         {
             Sala5 Sala5 = new Sala5();
