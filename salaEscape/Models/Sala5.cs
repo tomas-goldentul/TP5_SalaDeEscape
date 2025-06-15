@@ -4,6 +4,7 @@ public class Sala5
 {
     public const int Clave = 89264;
     public static string palabraAdivinar{get; set;}
+    public static int intentos{get; set;}
      
     public static bool Verificar(int clave)
     {
@@ -12,6 +13,7 @@ public class Sala5
     static public List<string> cargarPalabras()
     {
         List<string> listaPalabras = new List<string>() { "manzana" };
+        intentos = 0;
         return listaPalabras;
     }
     public static  List<char> compararPalabra(string wordle){
