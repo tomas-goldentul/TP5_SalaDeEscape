@@ -13,7 +13,13 @@ body {
   margin: 10px;
   padding: 10px;
 }
+.inicio{
+    background-image: url("/images/fondoIndex.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
+}
 section{
   clear: both;}
 footer {
@@ -124,6 +130,15 @@ footer {
   text-align: center;
   padding: 50px;
 }
+/* Estilo index */
+.index h1{
+  font-family: 'MedievalSharp', cursive;
+  font-size: 4em;       
+  color: #e6d5a3;        
+  text-shadow: 2px 2px 2px black; 
+ text-align: center;
+
+}
 .index {
   display: flex;
   flex-direction: column;
@@ -133,23 +148,23 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  gap: 10px; /* Espacio entre los botones */
+  gap: 10px; 
 }
 .index a {
   text-decoration: none;
   font-size: 1em;
   color: rgb(212, 205, 205);
   background-color: #7a7979;
-  width: 100px; /* Tamaño más definido */
+  width: 100px; 
   text-align: center;
-  padding: 10px;
+  padding: 14px;
   border: 3px solid #555;
   border-radius: 10px;
 }
 .index a:hover{
-  padding: 12px;
-  border: 4px solid orange;}
-
+  padding: 15px;
+    background-color: #656464;
+}
 .btn-reintentar {
   display: inline-block;
   padding: 10px 20px;
@@ -164,19 +179,25 @@ footer {
   background-color: #c82333;
 }
 
+.fondoHistoria{
+  background-image: url("/images/fondoSalas.png");
 }
-.historia div{
-  border: 3px solid darkgreen;
+.historia{
+  max-width: 700px;
+  margin-left: 25%;
+  background-color: #222;
+  padding: 3%;
   border-radius: 10px;
-  box-shadow: 2px 2px 2px green;
-  width: 40%;
-  margin-left: 27%;
-  margin-top: 6%;
-  padding: 1%;
+  line-height: 1.2;
+  font-size: 1.2em;
+   border: 2px solid #5a4e2a;
 }
-.historia div:hover{
-  box-shadow: none;
+.historia p{
+  color:  #e6d5a3;
+   font-family: 'IM Fell English', serif;
+    text-indent: 2em;
 }
+
 
 
 
