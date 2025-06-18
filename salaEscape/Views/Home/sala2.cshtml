@@ -4,6 +4,9 @@
     var letrasErradas = ViewBag.LetrasErradas as List<char> ?? new List<char>();
     var intentos = ViewBag.Intentos;
 }
+<body>
+<img src="/images/ahorcado.png" alt="fondo" class="fondo-img">
+
 
 <div class="sala2-container">
 
@@ -57,15 +60,32 @@
         </div>
     </div>
 </div>
+</body>
 
 <style>
-  body {
-    font-family: 'Georgia', serif;
-    background-color: #1b2b1b;
-    margin: 0;
-    padding: 0;
-    color: #f5f0e6;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  color: #f5f0e6;
+  background-color: #1b2b1b;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.fondo-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;        /* Cubre todo el ancho de la pantalla */
+  height: 100vh;       /* Cubre todo el alto de la pantalla */
+  object-fit: cover; /* Mantiene la imagen completa sin recortes */
+  object-position: center center;
+  z-index: -1;         /* Coloca la imagen detrás de todo */
+  pointer-events: none; /* No interfiere con el contenido clickeable */
+}
+
+  
 
   .sala2-container {
     background-color: #2e3f2e;

@@ -2,9 +2,10 @@
     ViewData["Title"] = "¡Has perdido!";
     var salaActual = Context.Session.GetString("Sala");
 }
-
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
+<body class="derrota">
 <div class="derrota-container">
-    <h1>¡Has perdido!</h1>
+    <h1>¡Perdiste!</h1>
     
     @if (salaActual == "2")
     {
@@ -12,29 +13,68 @@
     }
     else
     {
-        <p>No te preocupes, puedes intentarlo de nuevo.</p>
+        <p>No te preocupes, podés intentarlo de nuevo.</p>
     }
     
     <a href='@Url.Action("Salas")' class="btn-reintentar">Volver a las salas</a>
 </div>
+</body>
 
 <style>
+    body.derrota {
+        margin: 0;
+        min-height: 100vh;
+        background-image: url("/images/sacrificio.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: 'UnifrakturCook', cursive;
+        color: #f5e9d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 3px #000000cc;
+    }
+
     .derrota-container {
+        background: rgba(44, 32, 18, 0.85); 
+        padding: 40px 50px;
+        border: 3px double #a1866f;
+        border-radius: 20px;
+        max-width: 500px;
         text-align: center;
-        padding: 50px;
+        box-shadow: 0 0 15px #6b533faa;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+
+    p {
+        font-size: 1.3em;
+        line-height: 1.5;
+        margin-bottom: 30px;
     }
 
     .btn-reintentar {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #dc3545;
-        color: white;
+        background-color: #7b3f00;
+        color: #f5e9d3;
         text-decoration: none;
-        border-radius: 5px;
-        margin-top: 20px;
+        padding: 12px 28px;
+        font-weight: bold;
+        border: 3px double #a1866f;
+        border-radius: 12px;
+        box-shadow: 0 0 8px #a1866f88;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'UnifrakturCook', cursive;
+        display: inline-block;
     }
 
     .btn-reintentar:hover {
-        background-color: #c82333;
+        background-color: #a25800;
+        box-shadow: 0 0 15px #d9c47fcc;
     }
-</style> 
+</style>

@@ -37,6 +37,18 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
 }
+  #salas img{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 10%;
+max-height: 100vh;
+object-fit: cover;
+transform-origin: bottom center;
+  }
+  #salas img:hover {
+    transform: scaleY(1.2); 
+  }
 /* Estilos Sala1 */
 #sala1{
   background-image: url("/images/sala1.png");
@@ -181,22 +193,41 @@ footer {
 
 .fondoHistoria{
   background-image: url("/images/fondoSalas.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.historia{
-  max-width: 700px;
-  margin-left: 25%;
-  background-color: #222;
+.historia {
+  max-width: 800px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
   padding: 3%;
-  border-radius: 10px;
-  line-height: 1.2;
+  border-radius: 15px;
+  line-height: 1.6;
   font-size: 1.2em;
-   border: 2px solid #5a4e2a;
+  border: 2px solid #bfae80;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
-.historia p{
-  color:  #e6d5a3;
-   font-family: 'IM Fell English', serif;
-    text-indent: 2em;
+
+.historia:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
 }
+
+.historia p {
+  color: #f5e9c8;
+  font-family: 'IM Fell English', serif;
+  text-indent: 2em;
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+
+.historia p:first-letter {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #d2b673;
+}
+
 
 
 
