@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0SrbNHP/A7TxqHHlYLJLSfUAoUMwQwK3G3qKBc1yWHc=",
+  "Hash": "lBYFl5Tz11tmb9//8Fdb+Jr94wexMQldSdpAJGN0jWc=",
   "Source": "salaEscape",
   "BasePath": "_content/salaEscape",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\carta.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondocreditos.png",
+      "SourceId": "salaEscape",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "BasePath": "_content/salaEscape",
+      "RelativePath": "images/fondocreditos.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fondocreditos.png"
     },
     {
       "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoIndex.png",
@@ -566,6 +585,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\sala1.png"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\salaRatas.png",
+      "SourceId": "salaEscape",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "BasePath": "_content/salaEscape",
+      "RelativePath": "images/salaRatas.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\salaRatas.png"
     },
     {
       "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\Thumbs.db",

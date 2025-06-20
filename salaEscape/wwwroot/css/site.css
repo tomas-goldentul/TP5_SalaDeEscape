@@ -285,6 +285,12 @@ transform-origin: bottom center;
 }
 
 /* Estilos Sala4 */
+.sala4fondo{
+    background-image: url("/images/salaRatas.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .sala4 {
     max-width: 1000px;
     margin: 0 auto;
@@ -303,10 +309,7 @@ transform-origin: bottom center;
     width: 800px;
     height: 500px;
     margin: 0 auto;
-    border: 3px solid #333;
-    border-radius: 10px;
     overflow: hidden;
-    background: #f0f0f0;
 }
 
 .area-juego {
@@ -322,7 +325,7 @@ transform-origin: bottom center;
     background-image: url('/images/rata.png');
     background-size: contain;
     background-repeat: no-repeat;
-    cursor: pointer;
+    cursor: crosshair;
     transition: all 0.5s ease;
 }
 

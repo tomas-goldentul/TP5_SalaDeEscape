@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (!rata.classList.contains('golpeada')) {
                         posicionarRataAleatoriamente(rata);
                     }
-                }, Math.random() * 500 + 500);
+                }, Math.random() * 900 + 900);
             }
         }
 
