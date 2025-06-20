@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CjKBclxUSMCivwpH19G4TM/PJSxwCOnF2g1oEdNcggE=",
+  "Hash": "0SrbNHP/A7TxqHHlYLJLSfUAoUMwQwK3G3qKBc1yWHc=",
   "Source": "salaEscape",
   "BasePath": "_content/salaEscape",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "salaEscape\\wwwroot",
       "Source": "salaEscape",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\css\\site.css",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\favicon.ico",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\ahorcado.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\ahorcado.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/ahorcado.png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ahorcado.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\bate.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\bate.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/bate.png",
       "AssetKind": "All",
@@ -93,10 +93,48 @@
       "OriginalItemSpec": "wwwroot\\images\\bate.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\carta.jpg",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\cara1.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "BasePath": "_content/salaEscape",
+      "RelativePath": "images/cara1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cara1.png"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\cara2.png",
+      "SourceId": "salaEscape",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "BasePath": "_content/salaEscape",
+      "RelativePath": "images/cara2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cara2.png"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\carta.jpg",
+      "SourceId": "salaEscape",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/carta.jpg",
       "AssetKind": "All",
@@ -112,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\carta.jpg"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoIndex.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoIndex.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoIndex.png",
       "AssetKind": "All",
@@ -131,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoIndex.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala30.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala30.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoSala30.png",
       "AssetKind": "All",
@@ -150,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoSala30.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala31.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala31.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoSala31.png",
       "AssetKind": "All",
@@ -169,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoSala31.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala32.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala32.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoSala32.png",
       "AssetKind": "All",
@@ -188,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoSala32.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala33.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala33.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoSala33.png",
       "AssetKind": "All",
@@ -207,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoSala33.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala34.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSala34.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoSala34.png",
       "AssetKind": "All",
@@ -226,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoSala34.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSalas.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\fondoSalas.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/fondoSalas.png",
       "AssetKind": "All",
@@ -245,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fondoSalas.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista1.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista1.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/pista1.png",
       "AssetKind": "All",
@@ -264,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pista1.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista2.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista2.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/pista2.png",
       "AssetKind": "All",
@@ -283,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pista2.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista3.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista3.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/pista3.png",
       "AssetKind": "All",
@@ -302,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pista3.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista4.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista4.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/pista4.png",
       "AssetKind": "All",
@@ -321,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pista4.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista5.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\pista5.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/pista5.png",
       "AssetKind": "All",
@@ -340,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pista5.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta.png",
       "AssetKind": "All",
@@ -359,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta1.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta1.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta1.png",
       "AssetKind": "All",
@@ -378,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta1.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta2.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta2.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta2.png",
       "AssetKind": "All",
@@ -397,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta2.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta3.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta3.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta3.png",
       "AssetKind": "All",
@@ -416,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta3.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta4.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta4.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta4.png",
       "AssetKind": "All",
@@ -435,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta4.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta5.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta5.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta5.png",
       "AssetKind": "All",
@@ -454,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta5.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta6.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\puerta6.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/puerta6.png",
       "AssetKind": "All",
@@ -473,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\images\\puerta6.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\rata.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\rata.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/rata.png",
       "AssetKind": "All",
@@ -492,10 +530,29 @@
       "OriginalItemSpec": "wwwroot\\images\\rata.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\sala1.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\sacrificio.png",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "BasePath": "_content/salaEscape",
+      "RelativePath": "images/sacrificio.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\sacrificio.png"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\sala1.png",
+      "SourceId": "salaEscape",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/sala1.png",
       "AssetKind": "All",
@@ -511,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sala1.png"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\Thumbs.db",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\images\\Thumbs.db",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "images/Thumbs.db",
       "AssetKind": "All",
@@ -530,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Thumbs.db"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\js\\site.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -549,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -568,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -587,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -606,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -625,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -644,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -663,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -682,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -701,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -720,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -739,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -758,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "salaEscape",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\wwwroot\\",
       "BasePath": "_content/salaEscape",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

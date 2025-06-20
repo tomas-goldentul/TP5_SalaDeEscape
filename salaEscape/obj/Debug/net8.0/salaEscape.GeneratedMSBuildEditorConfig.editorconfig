@@ -9,75 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = salaEscape
 build_property.RootNamespace = salaEscape
-build_property.ProjectDir = C:\Users\49319223\Downloads\TP5_SalaDeEscape\salaEscape\
+build_property.ProjectDir = C:\Users\golde\Downloads\TP5_SalaDeEscape\salaEscape\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\49319223\Downloads\TP5_SalaDeEscape\salaEscape
+build_property.MSBuildProjectDirectory = C:\Users\golde\Downloads\TP5_SalaDeEscape\salaEscape
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/creditos.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/creditos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjcmVkaXRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/derrota.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/derrota.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkZXJyb3RhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/historia.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/historia.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxoaXN0b3JpYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/Index.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala1.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhMS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala2.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala3.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala3.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhMy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala4.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala4.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhNC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala5.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala5.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhNS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala6.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/sala6.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhNi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/salaFinal.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/salaFinal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhRmluYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/salas.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Home/salas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzYWxhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Shared/_Layout.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/_ViewImports.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49319223/Downloads/TP5_SalaDeEscape/salaEscape/Views/_ViewStart.cshtml]
+[C:/Users/golde/Downloads/TP5_SalaDeEscape/salaEscape/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
