@@ -3,7 +3,14 @@
 }  
 <script>
     var qteTerminado = @Json.Serialize(ViewBag.QteTerminado);
+
+    if (qteTerminado) {
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("sala3").style.setProperty("background-image", "url('/images/fondoSala35.png')", "important");
+        });
+    }
 </script>
+
 <body id="sala3">
   <!--42987-->
   <div class="sala3-container">
@@ -22,7 +29,8 @@
     </section>
     
     <section >
-      <button id="padbtn" style="display: none;">Mostrar pad</button>
+     <img src="/images/Numpad.png" alt="" id="padbtn" style="display: none; width: 6%; position: absolute; left: 60%; top: 50%; transform: translateY(-50%);">
+
       <div id="pad" style="display: none;">
         <input type="text" id="pad-display" readonly />
         <div id="numpad">

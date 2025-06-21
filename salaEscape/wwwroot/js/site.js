@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Código del QTE
         const fases = [
-            { tecla: "w", imagen: "/images/fondoSala30.png", mensaje: "¡Fase 1! Spam W lo más rápido posible", tiempoLimite: 3000 },
-            { tecla: "s", imagen: "/images/fondoSala31.png", mensaje: "¡Fase 2! Spam S lo más rápido posible", tiempoLimite: 3500 },
-            { tecla: "a", imagen: "/images/fondoSala32.png", mensaje: "¡Fase 3! Spam A lo más rápido posible", tiempoLimite: 4000 },
-            { tecla: "d", imagen: "/images/fondoSala33.png", mensaje: "¡Fase Final! Spam D lo más rápido posible", tiempoLimite: 4500 }
+            { tecla: "w", imagen: "/images/fondoSala30.png", mensaje: "Spammea", tiempoLimite: 3000 },
+            { tecla: "s", imagen: "/images/fondoSala31.png", mensaje: "Spammea", tiempoLimite: 3500 },
+            { tecla: "a", imagen: "/images/fondoSala32.png", mensaje: "Spammea", tiempoLimite: 4000 },
+            { tecla: "d", imagen: "/images/fondoSala33.png", mensaje: "Spammea", tiempoLimite: 4500 }
         ];
 
         const teclas = {
@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const fase = fases[faseActual];
                     sala3.style.backgroundImage = `url('${fase.imagen}')`;
-                    mensaje.textContent = `${fase.mensaje} (0/${pulsacionesRequeridas})`;
                     destacarTecla(fase.tecla);
 
                     clearTimeout(temporizador);
@@ -116,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             faseEnCurso = false;
                             if (pulsaciones < pulsacionesRequeridas) {
                                 mensaje.textContent = "¡Fallaste! Inténtalo de nuevo.";
-                                sala3.style.backgroundImage = "url('/images/fondoSala30.png')";
                                 destacarTecla(null);
                                 faseActual = 0;
                                 setTimeout(iniciarFase, pausaEntreFases);
@@ -133,9 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const fase = fases[faseActual];
             const teclaPresionada = event.key.toLowerCase();
 
-            if (teclaPresionada === fase.tecla) {
+            if (teclaPresionada == fase.tecla) {
                 pulsaciones++;
-                mensaje.textContent = `${fase.mensaje} (${pulsaciones}/${pulsacionesRequeridas})`;
+                mensaje.textContent = `${fase.mensaje}`;
 
                 if (pulsaciones >= pulsacionesRequeridas) {
                     faseEnCurso = false;
@@ -144,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (faseActual === fases.length - 1) {
                         // Última fase completada
                         setTimeout(() => {
-                            mensaje.textContent = "¡Evento completado!";
                             sala3.style.backgroundImage = "url('/images/fondoSala35.png')";
                             destacarTecla(null);
                             document.getElementById("padbtn").style.display = "inline-block";
@@ -161,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 faseEnCurso = false;
                 clearTimeout(temporizador);
                 mensaje.textContent = "¡Tecla incorrecta! Inténtalo de nuevo.";
-                sala3.style.backgroundImage = "url('/images/fondoSala30.png')";
                 destacarTecla(null);
                 faseActual = 0;
                 setTimeout(iniciarFase, pausaEntreFases);
