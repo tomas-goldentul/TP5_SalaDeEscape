@@ -1,69 +1,51 @@
-<body>
-<p>@ViewBag.palabraAdivinar</p>
 @{
- if (ViewBag.respuesta != null)
-  {
-      string respuesta = ViewBag.respuesta; // asumiendo que es string
-      int caracteres = respuesta.Length;
-      for (int i = 0; i < caracteres; i++)
-      {
-          char c = respuesta[i];
-          if (c == 'v')
-          {
-              <h2 class="verde">@c</h2>
-          }
-          else if (c == 'a')
-          {
-              <h2 class="amarillo">@c</h2>
-          }
-          else
-          {
-              <h2 class="rojo">@c</h2>
-          }
-      }
-  }
+    ViewBag.Title = "Sala 5 - Wordle";
+    var respuesta = ViewBag.respuesta as List<salaEscape.Models.LetraResultado>;
+    int wordleActual = ViewBag.wordleActual ?? 1;
+    bool finalizado = ViewBag.finalizado ?? false;
+    int cantLetras = ViewBag.cantLetras ?? 0;
+    string fondo = $"/images/fondoSala3{wordleActual - 1}.png";
 }
-
-<div>
-<form action='@Url.Action("IngresarWordle", "Home")' method="POST" class="form-wordle">
-    <input type="text" 
-      name="wordle" 
-      pattern="[a-zA-Z]+" 
-      placeholder="Palabra" 
-      required 
-      autocomplete="off">
-      <button type="submit" id="submitWordle">Comprobar</button>
-    </form>
-  </div>
-  <div id="submitCodigo" style="display: none;">
-  <form action='@Url.Action("salas", "Home")' method="POST">
-  <input
-    type="text"
-    name="clave"
-    placeholder="Ordená las pistas"
-    required
-    minlength="5"
-    maxlength="5">
-  <input type="submit" value="Guardar">
-</form>
-</div>
-<style>
-.verde{
-  background-color: green;
-}
-.amarillo{
-  background-color: yellow;
-}
-.rojo{
-  background-color: red;
-}
-</style>
-@if((ViewBag.adivinoPalabra as bool?) == true)
-{
+<body style="background-image: url('@fondo'); background-size: cover;">
+    <p>@ViewBag.mensaje</p>
+    @if (cantLetras > 0)
+    {
+        <p>La palabra tiene <b>@cantLetras</b> letras.</p>
+    }
+    @if (ViewBag.error != null)
+    {
+        <div style="color:red">@ViewBag.error</div>
+    }
+    @if (respuesta != null)
+    {
+        foreach (var letra in respuesta)
+        {
+            var clase = letra.Color == 'v' ? "verde" :
+                        letra.Color == 'a' ? "amarillo" : "rojo";
+            <h2 class="@clase">@letra.Letra</h2>
+        }
+    }
+    <div>
+        @if (!finalizado)
+        {
+            <form action='@Url.Action("Sala5", "Home")' method="POST" class="form-wordle">
+                <input type="text" name="wordle" pattern="[a-zA-Z]+" placeholder="Palabra" required autocomplete="off" maxlength="@cantLetras" minlength="@cantLetras">
+                <button type="submit">Comprobar</button>
+            </form>
+        }
+    </div>
+    @if (finalizado)
+    {
+        <div id="submitCodigo">
+            <form action='@Url.Action("Sala5", "Home")' method="POST">
+                <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5">
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
+    }
     <style>
-      #submitCodigo {
-        display: inline-block;
-      }
+        .verde { background-color: green; display: inline-block; margin: 4px; padding: 8px; color: white; }
+        .amarillo { background-color: yellow; display: inline-block; margin: 4px; padding: 8px; }
+        .rojo { background-color: red; display: inline-block; margin: 4px; padding: 8px; color: white; }
     </style>
-}
 </body>

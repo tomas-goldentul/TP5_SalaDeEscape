@@ -1,47 +1,63 @@
 namespace salaEscape.Models;
 
+public class LetraResultado
+{
+    public char Letra { get; set; }
+    public char Color { get; set; } // 'v' (verde), 'a' (amarillo), 'r' (rojo)
+}
+
 public class Sala5
 {
     public const int Clave = 89264;
-    public static string palabraAdivinar{get; set;}
-    public static int intentos{get; set;}
-     
-    public static bool Verificar(int clave)
+    public string palabraAdivinar { get; set; }
+    public int intentos { get; set; }
+    public List<string> palabrasJugadas { get; set; } = new List<string>();
+    public int wordleActual { get; set; } = 1;
+
+    public static bool Verificar(int clave) => clave == Clave;
+
+    public static List<string> cargarPalabras() => new List<string>()
     {
-        return clave == Clave;
-    }
-    static public List<string> cargarPalabras()
+        "manzana", "banana", "futbol", "perro", "raton"
+    };
+
+    public void crearRandom()
     {
-        List<string> listaPalabras = new List<string>() { "manzana" };
-        intentos = 0;
-        return listaPalabras;
-    }
-    public static  List<char> compararPalabra(string wordle){
-        List<char> respuesta = new List<char>();
-        for(int i = 0; i < palabraAdivinar.Count(); i++){
-            if (palabraAdivinar[i] == wordle[i]){
-                respuesta.Add(wordle[i]);
-                respuesta.Add('v');
-            } else if(palabraAdivinar.Contains(wordle[i])){
-                    respuesta.Add(wordle[i]);
-                    respuesta.Add('a');
-                } else
-                {
-                   respuesta.Add(wordle[i]); 
-                   respuesta.Add('r');
-                }}
-        
-        return respuesta;
-    }
-    public static bool adivinaPalabra(string wordle){
-        return wordle == palabraAdivinar;
-    }
-    public static void crearRandom()
-    {
-        cargarPalabras();
-        int num;
+        var lista = cargarPalabras().Except(palabrasJugadas).ToList();
         Random r = new Random();
-        num = r.Next(0, cargarPalabras().Count);
-        palabraAdivinar = cargarPalabras()[num];
+        palabraAdivinar = lista[r.Next(lista.Count)];
     }
+
+    public void siguienteWordle()
+    {
+        palabrasJugadas.Add(palabraAdivinar);
+        wordleActual++;
+        intentos = 0;
+        crearRandom();
+    }
+
+    public List<LetraResultado> compararPalabra(string wordle)
+    {
+        var resultado = new List<LetraResultado>();
+
+        for (int i = 0; i < palabraAdivinar.Length; i++)
+        {
+            var letra = wordle[i];
+            char color;
+
+            if (letra == palabraAdivinar[i])
+                color = 'v';
+            else if (palabraAdivinar.Contains(letra))
+                color = 'a';
+            else
+                color = 'r';
+
+            resultado.Add(new LetraResultado { Letra = letra, Color = color });
+        }
+
+        intentos++;
+        return resultado;
+    }
+
+    public bool adivinaPalabra(string wordle) => wordle == palabraAdivinar;
 }
