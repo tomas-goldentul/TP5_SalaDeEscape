@@ -29,6 +29,92 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+/* Estilo index */
+.index h1{
+  font-family: 'MedievalSharp', cursive;
+  font-size: 4em;       
+  color: #e6d5a3;        
+  text-shadow: 2px 2px 2px black; 
+ text-align: center;
+
+}
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 10px; 
+}
+.index a {
+  text-decoration: none;
+  font-size: 1em;
+  color: rgb(212, 205, 205);
+  background-color: #7a7979;
+  width: 100px; 
+  text-align: center;
+  padding: 14px;
+  border: 3px solid #555;
+  border-radius: 10px;
+}
+.index a:hover{
+  padding: 15px;
+    background-color: #656464;
+}
+.btn-reintentar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.btn-reintentar:hover {
+  background-color: #c82333;
+}
+
+.fondoHistoria{
+  background-image: url("/images/fondoSalas.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.historia {
+  max-width: 800px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+  padding: 3%;
+  border-radius: 15px;
+  line-height: 1.6;
+  font-size: 1.2em;
+  border: 2px solid #bfae80;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.historia:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.historia p {
+  color: #f5e9c8;
+  font-family: 'IM Fell English', serif;
+  text-indent: 2em;
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+
+.historia p:first-letter {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #d2b673;
+}
+
 /* Estilos salas */
 
 /*Salas*/
@@ -143,95 +229,6 @@ transform-origin: bottom center;
   text-align: center;
   padding: 50px;
 }
-/* Estilo index */
-.index h1{
-  font-family: 'MedievalSharp', cursive;
-  font-size: 4em;       
-  color: #e6d5a3;        
-  text-shadow: 2px 2px 2px black; 
- text-align: center;
-
-}
-.index {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  gap: 10px; 
-}
-.index a {
-  text-decoration: none;
-  font-size: 1em;
-  color: rgb(212, 205, 205);
-  background-color: #7a7979;
-  width: 100px; 
-  text-align: center;
-  padding: 14px;
-  border: 3px solid #555;
-  border-radius: 10px;
-}
-.index a:hover{
-  padding: 15px;
-    background-color: #656464;
-}
-.btn-reintentar {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #dc3545;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.btn-reintentar:hover {
-  background-color: #c82333;
-}
-
-.fondoHistoria{
-  background-image: url("/images/fondoSalas.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.historia {
-  max-width: 800px;
-  margin: 40px auto;
-  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
-  padding: 3%;
-  border-radius: 15px;
-  line-height: 1.6;
-  font-size: 1.2em;
-  border: 2px solid #bfae80;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-}
-
-.historia:hover {
-  transform: scale(1.02); 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-}
-
-.historia p {
-  color: #f5e9c8;
-  font-family: 'IM Fell English', serif;
-  text-indent: 2em;
-  margin-bottom: 1.5em;
-  text-align: justify;
-}
-
-.historia p:first-letter {
-  font-size: 1.6em;
-  font-weight: bold;
-  color: #d2b673;
-}
-
-
-
-
 
 /* Estilos Sala3 */
 #sala3{
@@ -473,3 +470,27 @@ cursor: pointer;
 #submit:hover {
   background-color: #c3e6cb;
 }
+
+        .verde {color: green; display: inline-block; margin: 4px; padding: 8px; }
+        .amarillo {color: yellow; display: inline-block; margin: 4px; padding: 8px; }
+        .rojo {color: red; display: inline-block; margin: 4px; padding: 8px; }
+
+
+        .verde, .amarillo, .rojo {
+            font-family: 'Impact', 'Rock Salt', 'Arial Black', cursive, sans-serif;
+            font-size: 2em;
+            letter-spacing: 2px;
+            background-color: #5f574b;
+            background: linear-gradient(5deg, #797467 30%, #9b9078 100%, #474138 70%);
+            border: 2px solid #888;
+            border-radius: 8px;
+            box-shadow: 2px 4px 8px #222, 0 1px 0 #fff inset;
+            text-shadow: 2px 2px 0 #444, 0 2px 4px #222, 0 0 8px #fff8;
+            display: inline-block;
+            margin: 4px;
+            padding: 8px 14px;
+            transition: transform 0.1s;
+        }
+        .rocoso:active {
+            transform: scale(0.95) translateY(2px);
+        }

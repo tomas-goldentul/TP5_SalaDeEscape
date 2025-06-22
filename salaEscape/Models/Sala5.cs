@@ -6,6 +6,12 @@ public class LetraResultado
     public char Color { get; set; } // 'v' (verde), 'a' (amarillo), 'r' (rojo)
 }
 
+public class JugadaWordle
+{
+    public string Palabra { get; set; }
+    public List<List<LetraResultado>> Jugadas { get; set; } = new();
+}
+
 public class Sala5
 {
     public const int Clave = 89264;
@@ -13,6 +19,17 @@ public class Sala5
     public int intentos { get; set; }
     public List<string> palabrasJugadas { get; set; } = new List<string>();
     public int wordleActual { get; set; } = 1;
+    public List<JugadaWordle> HistorialWordle { get; set; } = new();
+
+    private JugadaWordle GetOrCreateJugadaActual()
+    {
+        if (HistorialWordle.Count < wordleActual)
+        {
+            var jw = new JugadaWordle { Palabra = palabraAdivinar };
+            HistorialWordle.Add(jw);
+        }
+        return HistorialWordle[wordleActual - 1];
+    }
 
     public static bool Verificar(int clave) => clave == Clave;
 
@@ -56,6 +73,8 @@ public class Sala5
         }
 
         intentos++;
+        // Guardar jugada en historial
+        GetOrCreateJugadaActual().Jugadas.Add(resultado);
         return resultado;
     }
 

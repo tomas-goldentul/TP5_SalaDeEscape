@@ -183,7 +183,10 @@ public class HomeController : Controller
         Sala5 sala = ObjetoUtils.StringToObject<Sala5>(salaJson) ?? new Sala5();
         if (string.IsNullOrEmpty(sala.palabraAdivinar))
             sala.crearRandom();
+        if (sala.HistorialWordle.Count < sala.wordleActual)
+            sala.HistorialWordle.Add(new salaEscape.Models.JugadaWordle { Palabra = sala.palabraAdivinar });
         HttpContext.Session.SetString("sala5", ObjetoUtils.ObjectToString(sala));
+        ViewBag.HistorialWordle = sala.HistorialWordle;
         ViewBag.wordleActual = sala.wordleActual;
         ViewBag.palabraAdivinar = null;
         ViewBag.cantLetras = sala.palabraAdivinar != null ? sala.palabraAdivinar.Length : 0;
@@ -244,6 +247,7 @@ public class HomeController : Controller
             }
         }
         HttpContext.Session.SetString("sala5", ObjetoUtils.ObjectToString(sala));
+        ViewBag.HistorialWordle = sala.HistorialWordle;
         ViewBag.wordleActual = sala.wordleActual;
         ViewBag.palabraAdivinar = null;
         ViewBag.cantLetras = sala.palabraAdivinar != null ? sala.palabraAdivinar.Length : 0;

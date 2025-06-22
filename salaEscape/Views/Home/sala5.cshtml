@@ -1,10 +1,10 @@
 @{
     ViewBag.Title = "Sala 5 - Wordle";
-    var respuesta = ViewBag.respuesta as List<salaEscape.Models.LetraResultado>;
+    var historial = ViewBag.HistorialWordle as List<salaEscape.Models.JugadaWordle>;
     int wordleActual = ViewBag.wordleActual ?? 1;
     bool finalizado = ViewBag.finalizado ?? false;
     int cantLetras = ViewBag.cantLetras ?? 0;
-    string fondo = $"/images/fondoSala3{wordleActual - 1}.png";
+    string fondo = $"/images/fondoSala5{wordleActual - 1}.png";
 }
 <body style="background-image: url('@fondo'); background-size: cover;">
     <p>@ViewBag.mensaje</p>
@@ -16,15 +16,30 @@
     {
         <div style="color:red">@ViewBag.error</div>
     }
-    @if (respuesta != null)
-    {
-        foreach (var letra in respuesta)
+    <div style="display: flex; gap: 30px; margin-bottom: 20px;">
+        @if (historial != null)
         {
-            var clase = letra.Color == 'v' ? "verde" :
-                        letra.Color == 'a' ? "amarillo" : "rojo";
-            <h2 class="@clase">@letra.Letra</h2>
+            int num = 1;
+            foreach (var wordle in historial)
+            {
+                <div>
+                    <h4>Wordle @num</h4>
+                    @foreach (var jugada in wordle.Jugadas)
+                    {
+                        <div>
+                            @foreach (var letra in jugada)
+                            {
+                                var clase = letra.Color == 'v' ? "verde" :
+                                            letra.Color == 'a' ? "amarillo" : "rojo";
+                                <span class="@clase">@letra.Letra</span>
+                            }
+                        </div>
+                    }
+                </div>
+                num++;
+            }
         }
-    }
+    </div>
     <div>
         @if (!finalizado)
         {
@@ -43,9 +58,4 @@
             </form>
         </div>
     }
-    <style>
-        .verde { background-color: green; display: inline-block; margin: 4px; padding: 8px; color: white; }
-        .amarillo { background-color: yellow; display: inline-block; margin: 4px; padding: 8px; }
-        .rojo { background-color: red; display: inline-block; margin: 4px; padding: 8px; color: white; }
-    </style>
 </body>

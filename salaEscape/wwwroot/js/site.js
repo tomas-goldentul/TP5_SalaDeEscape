@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Si el QTE está completado, mostrar estado final y salir
         if (qteTerminado === true) {
             document.getElementById("qte").style.display = "none";
-            sala3.style.backgroundImage = "url('/images/fondoSala35.png')";
+            sala3.style.backgroundImage = "url('/images/fondoSala34.png')";
             document.getElementById("padbtn").style.display = "inline-block";
 
         }
