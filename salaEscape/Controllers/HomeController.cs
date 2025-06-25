@@ -254,32 +254,36 @@ public class HomeController : Controller
         ViewBag.finalizado = sala.wordleActual > 5;
         return View("Sala5");
     }
-
+    bool creadaSala6 = false;
     public IActionResult Sala6(char? letra, int? clave)
     {
+        bool perdio;
         if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
 
         var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
-
-        if (letra != null)
-        {
-            if (sala6.Jugar(letra.Value))
+            if(!creadaSala6)
             {
-                if (sala6.HaGanado())
-                {
-                    return RedirectToAction("SalaFinal");
-                }
-                return RedirectToAction("Derrota");
+                sala6.CrearRandom();
+                creadaSala6 = true;
             }
-        }
-        if (clave != null)
+        perdio = sala6.Jugar(letra.Value);
+        ViewBag.juegoTerminado = sala6.HaGanado;
+        if(perdio)
         {
-            if (new Sala6().Verificar(clave.Value))
-            {
-                HttpContext.Session.SetString(SALA_KEY, "6");
-                return RedirectToAction("Sala6");
-            }
+            sala6.Reiniciar;
+            creadaSala6 = false;
+            return RedirectToAction("Derrota");
         }
+            
+        
+        if (clave != null)      
+           if(sala6().Verificar(clave))
+            {
+                HttpContext.Session.SetString(SALA_KEY, "salaFinal");
+                return RedirectToAction("salaFinal");
+            }
+            
+        
 
         HttpContext.Session.SetString("Sala6", ObjetoUtils.ObjectToString(sala6));
 
