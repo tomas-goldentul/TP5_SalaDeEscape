@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Ur99qV7py1P4pMniJ+kxlG54z4gzUUQWt978fTzIkjYhs4BBFOk8XQk7PErprcB3vbQ2UQQIgxu9rU8ExQIXDw==",
+  "dgSpecHash": "L29F/5oYvRA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\48792944\\Downloads\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
+  "projectFilePath": "C:\\Users\\Manuel\\Desktop\\‎‎\\Prog\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\48792944\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Manuel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.16\\microsoft.netcore.app.ref.8.0.16.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.16\\microsoft.windowsdesktop.app.ref.8.0.16.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.16\\microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.16\\microsoft.netcore.app.host.win-x64.8.0.16.nupkg.sha512"
   ],
   "logs": []
 }

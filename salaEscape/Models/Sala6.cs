@@ -4,61 +4,64 @@ public class Sala6
 {
     private readonly char[] colores = { 'R', 'B', 'G', 'Y' };
     public bool Perdio { get; private set; } = false;
-    public List<char> LetrasRandom { get; private set; } = new List<char>();
-    public List<char> LetrasIngresadas { get; private set; } = new List<char>();
-    public int Jugadas { get; private set; } = 0;
+    public List<char> Secuencia { get; private set; } = new List<char>();
+    public List<char> SecuenciaJugador { get; private set; } = new List<char>();
+    public int Ronda { get; private set; } = 1;
+    public const int RondasParaGanar = 5;
+    public bool MostrandoSecuencia { get; private set; } = true;
     public const int Clave = 39765;
-    public bool Verificar(int clave)
-    {
-        return clave == Clave;
-    }public void CrearRandom()
-    {
-        Random rd = new Random();
-        int numRandom = rd.Next(colores.Length);
-        LetrasRandom.Add(colores[numRandom]);
-    }
-
-    public bool Jugar(char letra)
-    {
-        CrearRandom();
-        LetrasIngresadas.Add(char.ToUpper(letra));
-        Jugadas++;
-
-        for (int i = 0; i < LetrasIngresadas.Count; i++)
-        {
-            if (LetrasIngresadas[i] != LetrasRandom[i])
-            {
-                Perdio = true;
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public bool HaGanado()
-    {
-        return !Perdio && Jugadas >= 5;
-    }
 
     public void Reiniciar()
     {
         Perdio = false;
-        LetrasRandom.Clear();
-        LetrasIngresadas.Clear();
-        Jugadas = 0;
+        Secuencia.Clear();
+        SecuenciaJugador.Clear();
+        Ronda = 1;
+        MostrandoSecuencia = true;
+        AgregarColorASecuencia();
     }
 
-    public List<char> devolverLetrasRandom()
+    private void AgregarColorASecuencia()
     {
-        return LetrasRandom;
+        Random rd = new Random();
+        Secuencia.Add(colores[rd.Next(colores.Length)]);
     }
 
-    public List<char> devolverLetrasIngresadas()
+    public void IniciarTurnoJugador()
     {
-        return LetrasIngresadas;
+        MostrandoSecuencia = false;
+        SecuenciaJugador.Clear();
     }
 
+    public bool IntentarColor(char color)
+    {
+        if (MostrandoSecuencia || Perdio) return false;
+        
+        color = char.ToUpper(color);
+        SecuenciaJugador.Add(color);
+        
+        int posicionActual = SecuenciaJugador.Count - 1;
+        if (SecuenciaJugador[posicionActual] != Secuencia[posicionActual])
+        {
+            Perdio = true;
+            return false;
+        }
+
+        if (SecuenciaJugador.Count == Secuencia.Count)
+        {
+            if (Ronda < RondasParaGanar)
+            {
+                Ronda++;
+                AgregarColorASecuencia();
+                MostrandoSecuencia = true;
+                SecuenciaJugador.Clear();
+            }
+            return true;
+        }
+
+        return true;
+    }
+
+    public bool HaGanado() => !Perdio && Ronda >= RondasParaGanar && SecuenciaJugador.Count == Secuencia.Count;
+    public bool Verificar(int clave) => clave == Clave;
 }
-
-    

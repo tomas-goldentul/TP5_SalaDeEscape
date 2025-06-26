@@ -3,7 +3,7 @@ namespace salaEscape.Models;
 public class LetraResultado
 {
     public char Letra { get; set; }
-    public char Color { get; set; } // 'v' (verde), 'a' (amarillo), 'r' (rojo)
+    public char Color { get; set; }
 }
 
 public class JugadaWordle
@@ -73,7 +73,6 @@ public class Sala5
         }
 
         intentos++;
-        // Guardar jugada en historial
         GetOrCreateJugadaActual().Jugadas.Add(resultado);
         return resultado;
     }

@@ -45,7 +45,7 @@ public class HomeController : Controller
         var sala = new Sala1();
         if(sala.Verificar(clave))
         {
-            HttpContext.Session.SetString(SALA_KEY, "2");
+            HttpContext.Session.SetString(SALA_KEY, "6");
             return RedirectToAction("Sala2");
         }
         return View();
@@ -255,44 +255,24 @@ public class HomeController : Controller
         return View("Sala5");
     }
     bool creadaSala6 = false;
-    public IActionResult Sala6(char? letra, int? clave)
+    [HttpGet]
+    public IActionResult Sala6()
     {
-        bool perdio;
         if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
-
-        var sala6 = ObjetoUtils.StringToObject<Sala6>(HttpContext.Session.GetString("Sala6")) ?? new Sala6();
-            if(!creadaSala6)
-            {
-                sala6.CrearRandom();
-                creadaSala6 = true;
-            }
-        perdio = sala6.Jugar(letra.Value);
-        ViewBag.juegoTerminado = sala6.HaGanado;
-        if(perdio)
-        {
-            sala6.Reiniciar;
-            creadaSala6 = false;
-            return RedirectToAction("Derrota");
-        }
-            
-        
-        if (clave != null)      
-           if(sala6().Verificar(clave))
-            {
-                HttpContext.Session.SetString(SALA_KEY, "salaFinal");
-                return RedirectToAction("salaFinal");
-            }
-            
-        
-
-        HttpContext.Session.SetString("Sala6", ObjetoUtils.ObjectToString(sala6));
-
-        ViewBag.LetrasRandom = sala6.LetrasRandom;
-        ViewBag.LetrasIngresadas = sala6.LetrasIngresadas;
-        ViewBag.Jugadas = sala6.Jugadas;
-        ViewBag.Perdio = sala6.Perdio;
-
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult Sala6(string? accion)
+    {
+        if (!ValidarProgresoSala(6)) return RedirectToAction("Salas");
+        
+        if (accion == "ganar")
+        {
+            return RedirectToAction("SalaFinal");
+        }
+        
+        return RedirectToAction("Sala6");
     }
 
     public IActionResult SalaFinal()
