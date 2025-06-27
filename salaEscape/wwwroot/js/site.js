@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const sala3 = document.getElementById("sala3");
     if (sala3) {
         const mensaje = document.getElementById("mensaje");
-        
-        // Inicialización del numpad (siempre debe estar disponible si el QTE está completado)
         const display = document.getElementById("pad-display");
         const numKeys = document.querySelectorAll(".num-key");
         const clearButton = document.getElementById("clear");
@@ -55,16 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         }
-
-        // Si el QTE está completado, mostrar estado final y salir
         if (qteTerminado === true) {
             document.getElementById("qte").style.display = "none";
             sala3.style.backgroundImage = "url('/images/fondoSala34.png')";
             document.getElementById("padbtn").style.display = "inline-block";
 
         }
-
-        // Código del QTE
         const fases = [
             { tecla: "w", imagen: "/images/fondoSala30.png", mensaje: "Spammea", tiempoLimite: 3000 },
             { tecla: "s", imagen: "/images/fondoSala31.png", mensaje: "Spammea", tiempoLimite: 3500 },
@@ -140,9 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     clearTimeout(temporizador);
 
                     if (faseActual === fases.length - 1) {
-                        // Última fase completada
                         setTimeout(() => {
-                            sala3.style.backgroundImage = "url('/images/fondoSala35.png')";
+                            sala3.style.backgroundImage = "url('/images/fondoSala34.png')";
                             destacarTecla(null);
                             document.getElementById("padbtn").style.display = "inline-block";
                             fetch('/Home/CompletarQte', { method: 'POST' })

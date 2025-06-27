@@ -1,202 +1,151 @@
-@{
-    ViewData["Title"] = "Sala 6 - Simón Dice";
-}
+@{ ViewData["Title"] = "Sala 6 - Simón Dice"; }
 
 <div class="sala6-container text-center">
-    <h1>Sala 6 - Simón Dice</h1>
-    
-    <div class="estado-juego mb-4">
-        <h3>Ronda <span id="ronda-actual">1</span> de 10</h3>
-        <p id="mensaje-estado" class="alert alert-info">¡Preparado!</p>
+  <h1>Sala 6 - Simón Dice</h1>
+  <div class="estado-juego mb-4">
+    <h3>Ronda <span id="ronda-actual">1</span> de 10</h3>
+    <p id="mensaje-estado" class="alert alert-info">¡Preparado!</p>
+  </div>
+  <div class="botonera-simon">
+    <div class="fila-simon">
+      <button class="btn-simon rojo" data-color="R"></button>
+      <button class="btn-simon azul" data-color="B"></button>
     </div>
-
-    <div class="botonera-simon">
-        <div class="fila-simon">
-            <button class="btn-simon rojo" data-color="R"></button>
-            <button class="btn-simon azul" data-color="B"></button>
-        </div>
-        <div class="fila-simon">
-            <button class="btn-simon verde" data-color="G"></button>
-            <button class="btn-simon amarillo" data-color="Y"></button>
-        </div>
+    <div class="fila-simon">
+      <button class="btn-simon verde" data-color="G"></button>
+      <button class="btn-simon amarillo" data-color="Y"></button>
     </div>
-
-    <button id="btn-empezar" class="btn btn-primary mt-4">¡Empezar!</button>
+  </div>
+  <button id="btn-empezar" class="btn btn-primary mt-4">¡Empezar!</button>
 </div>
 
 <form id="form-ganar" method="post" asp-action="Sala6" style="display:none">
-    <input type="hidden" name="accion" value="ganar" />
+  <input type="hidden" name="accion" value="ganar" />
 </form>
 
 @section Scripts {
-    <script>
-        const colores = ['R', 'B', 'G', 'Y'];
-        let secuencia = [];
-        let secuenciaJugador = [];
-        let rondaActual = 1;
-        let jugando = false;
-        let puedeJugar = false;
-        const RONDAS_PARA_GANAR = 10;
-        const VELOCIDAD_INICIAL = 300; // Más rápido desde el inicio
-        const VELOCIDAD_MINIMA = 50;   // Aún más rápido al final
+<script>
+  const colores = ['R', 'B', 'G', 'Y'];
+  let secuencia = [];
+  let secuenciaJugador = [];
+  let rondaActual = 1;
+  let jugando = false;
+  let puedeJugar = false;
+  const RONDAS_PARA_GANAR = 10;
+  const VELOCIDAD_INICIAL = 300;
+  const VELOCIDAD_MINIMA = 50;
+  const btnEmpezar = document.getElementById('btn-empezar');
+  const mensajeEstado = document.getElementById('mensaje-estado');
+  const rondaSpan = document.getElementById('ronda-actual');
+  const botones = document.querySelectorAll('.btn-simon');
 
-        const btnEmpezar = document.getElementById('btn-empezar');
-        const mensajeEstado = document.getElementById('mensaje-estado');
-        const rondaSpan = document.getElementById('ronda-actual');
-        const botones = document.querySelectorAll('.btn-simon');
+  function calcularVelocidad() {
+    const reduccion = (VELOCIDAD_INICIAL - VELOCIDAD_MINIMA) * (rondaActual - 1) / (RONDAS_PARA_GANAR - 1);
+    return Math.max(VELOCIDAD_INICIAL - reduccion, VELOCIDAD_MINIMA);
+  }
 
-        function calcularVelocidad() {
-            // La velocidad disminuye linealmente con cada ronda
-            const reduccion = (VELOCIDAD_INICIAL - VELOCIDAD_MINIMA) * (rondaActual - 1) / (RONDAS_PARA_GANAR - 1);
-            return Math.max(VELOCIDAD_INICIAL - reduccion, VELOCIDAD_MINIMA);
-        }
+  function calcularPausa() {
+    return calcularVelocidad() * 1.2;
+  }
 
-        function calcularPausa() {
-            // La pausa entre colores es solo un poco más larga que la iluminación
-            return calcularVelocidad() * 1.2;
-        }
+  function iluminarBoton(color) {
+    return new Promise((resolve) => {
+      const btn = document.querySelector(`.btn-simon[data-color="${color}"]`);
+      btn.classList.add('iluminado');
+      setTimeout(() => {
+        btn.classList.remove('iluminado');
+        resolve();
+      }, calcularVelocidad());
+    });
+  }
 
-        function iluminarBoton(color) {
-            return new Promise((resolve) => {
-                const btn = document.querySelector(`.btn-simon[data-color="${color}"]`);
-                btn.classList.add('iluminado');
-                setTimeout(() => {
-                    btn.classList.remove('iluminado');
-                    resolve();
-                }, calcularVelocidad());
-            });
-        }
+  async function mostrarSecuencia() {
+    puedeJugar = false;
+    mensajeEstado.textContent = "¡Observa la secuencia!";
+    mensajeEstado.className = "alert alert-info";
+    for (let i = 0; i < secuencia.length; i++) {
+      await new Promise(resolve => setTimeout(resolve, calcularPausa()));
+      await iluminarBoton(secuencia[i]);
+    }
+    await new Promise(resolve => setTimeout(resolve, calcularPausa()));
+    mensajeEstado.textContent = "¡Tu turno!";
+    mensajeEstado.className = "alert alert-warning";
+    puedeJugar = true;
+  }
 
-        async function mostrarSecuencia() {
-            puedeJugar = false;
-            mensajeEstado.textContent = "¡Observa la secuencia!";
-            mensajeEstado.className = "alert alert-info";
-            
-            for (let i = 0; i < secuencia.length; i++) {
-                await new Promise(resolve => setTimeout(resolve, calcularPausa()));
-                await iluminarBoton(secuencia[i]);
-            }
-            
-            await new Promise(resolve => setTimeout(resolve, calcularPausa()));
-            mensajeEstado.textContent = "¡Tu turno!";
-            mensajeEstado.className = "alert alert-warning";
-            puedeJugar = true;
-        }
+  function agregarColorAleatorio() {
+    const nuevoColor = colores[Math.floor(Math.random() * colores.length)];
+    secuencia.push(nuevoColor);
+  }
 
-        function agregarColorAleatorio() {
-            const nuevoColor = colores[Math.floor(Math.random() * colores.length)];
-            secuencia.push(nuevoColor);
-        }
+  async function iniciarJuego() {
+    secuencia = [];
+    secuenciaJugador = [];
+    rondaActual = 1;
+    rondaSpan.textContent = rondaActual;
+    jugando = true;
+    btnEmpezar.style.display = 'none';
+    agregarColorAleatorio();
+    await mostrarSecuencia();
+  }
 
-        async function iniciarJuego() {
-            secuencia = [];
-            secuenciaJugador = [];
-            rondaActual = 1;
-            rondaSpan.textContent = rondaActual;
-            jugando = true;
-            btnEmpezar.style.display = 'none';
-            
-            agregarColorAleatorio();
-            await mostrarSecuencia();
-        }
+  async function manejarClick(color) {
+    if (!jugando || !puedeJugar) return;
+    await iluminarBoton(color);
+    secuenciaJugador.push(color);
+    const posicionActual = secuenciaJugador.length - 1;
+    if (secuenciaJugador[posicionActual] !== secuencia[posicionActual]) {
+      mensajeEstado.textContent = "¡Perdiste!";
+      mensajeEstado.className = "alert alert-danger";
+      jugando = false;
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+      return;
+    }
+    if (secuenciaJugador.length === secuencia.length) {
+      if (rondaActual === RONDAS_PARA_GANAR) {
+        mensajeEstado.textContent = "¡Ganaste!";
+        mensajeEstado.className = "alert alert-success";
+        document.getElementById('form-ganar').submit();
+        return;
+      }
+      rondaActual++;
+      rondaSpan.textContent = rondaActual;
+      secuenciaJugador = [];
+      agregarColorAleatorio();
+      await new Promise(resolve => setTimeout(resolve, 800));
+      await mostrarSecuencia();
+    }
+  }
 
-        async function manejarClick(color) {
-            if (!jugando || !puedeJugar) return;
-            
-            await iluminarBoton(color);
-            secuenciaJugador.push(color);
-            
-            // Verificar si el color es correcto
-            const posicionActual = secuenciaJugador.length - 1;
-            if (secuenciaJugador[posicionActual] !== secuencia[posicionActual]) {
-                // Perdió
-                mensajeEstado.textContent = "¡Perdiste!";
-                mensajeEstado.className = "alert alert-danger";
-                jugando = false;
-                // Esperar un momento y recargar
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000);
-                return;
-            }
-            
-            // Si completó la secuencia actual
-            if (secuenciaJugador.length === secuencia.length) {
-                if (rondaActual === RONDAS_PARA_GANAR) {
-                    // ¡Ganó el juego!
-                    mensajeEstado.textContent = "¡Ganaste!";
-                    mensajeEstado.className = "alert alert-success";
-                    document.getElementById('form-ganar').submit();
-                    return;
-                }
-                
-                // Siguiente ronda
-                rondaActual++;
-                rondaSpan.textContent = rondaActual;
-                secuenciaJugador = [];
-                agregarColorAleatorio();
-                await new Promise(resolve => setTimeout(resolve, 800));
-                await mostrarSecuencia();
-            }
-        }
+  // Mostrar mensaje bienvenida solo la primera vez
+  if (!localStorage.getItem("sala6BienvenidaMostrada")) {
+    const contenedor = document.querySelector(".sala6-container");
+    if (contenedor) {
+      const bienvenida = document.createElement("div");
+      bienvenida.className = "alert alert-primary";
+      bienvenida.style.marginBottom = "20px";
+      bienvenida.innerHTML = `
+        <h4>¡Bienvenido a la Sala 6 - Simón Dice!</h4>
+        <p>Debes memorizar la secuencia de colores y repetirla. Cada ronda se suma un color nuevo. ¡Llegá a la ronda 10 para ganar!</p>
+        <button class="btn btn-success mt-2" id="btn-bienvenida">Entendido</button>
+      `;
+      contenedor.prepend(bienvenida);
 
-        btnEmpezar.addEventListener('click', iniciarJuego);
-        
-        botones.forEach(btn => {
-            btn.addEventListener('click', () => manejarClick(btn.dataset.color));
-        });
-    </script>
+      btnEmpezar.style.display = "none";
+
+      document.getElementById("btn-bienvenida").addEventListener("click", () => {
+        bienvenida.remove();
+        btnEmpezar.style.display = "inline-block";
+        localStorage.setItem("sala6BienvenidaMostrada", "true");
+      });
+    }
+  }
+
+  btnEmpezar.addEventListener('click', iniciarJuego);
+  botones.forEach(btn => {
+    btn.addEventListener('click', () => manejarClick(btn.dataset.color));
+  });
+</script>
 }
-
-<style>
-.sala6-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.botonera-simon {
-    display: inline-block;
-    padding: 20px;
-    background: #333;
-    border-radius: 50%;
-    margin: 20px auto;
-}
-
-.fila-simon {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.fila-simon:last-child {
-    margin-bottom: 0;
-}
-
-.btn-simon {
-    width: 150px;
-    height: 150px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-simon.rojo { background: #e53935; }
-.btn-simon.azul { background: #1e88e5; }
-.btn-simon.verde { background: #43a047; }
-.btn-simon.amarillo { background: #fbc02d; }
-
-.btn-simon.iluminado {
-    filter: brightness(1.5);
-    box-shadow: 0 0 20px rgba(255,255,255,0.8);
-    transform: scale(1.1);
-}
-
-.estado-juego {
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-</style>

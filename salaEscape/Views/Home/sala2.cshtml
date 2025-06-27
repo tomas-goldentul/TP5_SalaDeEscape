@@ -5,11 +5,10 @@
     var intentos = ViewBag.Intentos;
 }
 <body>
+
 <img src="/images/ahorcado.png" alt="fondo" class="fondo-img">
 
-
 <div class="sala2-container">
-
     <div class="ahorcado-container">
         <div class="palabra-container">
             @foreach (var letra in palabraJugada)
@@ -31,22 +30,15 @@
         <div class="intentos">
             <p>Intentos restantes: <strong>@intentos</strong></p>
             <form action='@Url.Action("IngresarLetra", "Home")' method="POST" class="form-letra">
-    <input type="text" 
-           name="letra" 
-           maxlength="1" 
-           pattern="[a-zA-Z]" 
-           placeholder="Ingresa una letra" 
-           required 
-           autocomplete="off">
-           <button type="submit" id="submitLetra">Probar Letra</button>
+                <input type="text" 
+                       name="letra" 
+                       maxlength="1" 
+                       pattern="[a-zA-Z]" 
+                       placeholder="Ingresa una letra" 
+                       required 
+                       autocomplete="off">
+                <button type="submit" id="submitLetra">Probar Letra</button>
             </form>
-           
-
-  <script>
-    document.getElementById('submitLetra').addEventListener('click', function () {
-      this.textContent = this.textContent.toLowerCase();
-    });
-  </script>
 
             <form action='@Url.Action("IngresarPalabra", "Home")' method="POST" class="form-palabra">
                 <input type="text" 
@@ -55,12 +47,13 @@
                        placeholder="Arriesgar palabra completa" 
                        required 
                        autocomplete="off">
-                <button type="submit" id="submitLetra">Arriesgar palabra</button>
+                <button type="submit" id="submitPalabra">Arriesgar palabra</button>
             </form>
         </div>
     </div>
 </div>
-</body>
+
+
 
 <style>
 body {
@@ -77,142 +70,150 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;        /* Cubre todo el ancho de la pantalla */
-  height: 100vh;       /* Cubre todo el alto de la pantalla */
-  object-fit: cover; /* Mantiene la imagen completa sin recortes */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   object-position: center center;
-  z-index: -1;         /* Coloca la imagen detrás de todo */
-  pointer-events: none; /* No interfiere con el contenido clickeable */
+  z-index: -1;
+  pointer-events: none;
 }
 
-  
+.sala2-container {
+  background-color: #2e3f2e;
+  width: 700px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 12px;
+  border: 2px solid #a19b88;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
 
-  .sala2-container {
-    background-color: #2e3f2e;
-    width: 700px;
-    margin: 60px auto;
-    padding: 40px;
-    border-radius: 12px;
-    border: 2px solid #a19b88;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  }
+.palabra-container {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
 
-  .sala2-container h1 {
-    text-align: center;
-    font-size: 32px;
-    color: #d5cba3;
-    margin-bottom: 30px;
-    font-family: 'Garamond', serif;
-    letter-spacing: 1px;
-  }
+.letra {
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #3e4f3e;
+  color: #e7e2d2;
+  border: 2px solid #6c7a6c;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'Georgia', serif;
+}
 
-  .palabra-container {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-  }
+.letras-erradas {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-  .letra {
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-    font-weight: bold;
-    background-color: #3e4f3e;
-    color: #e7e2d2;
-    border: 2px solid #6c7a6c;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-family: 'Georgia', serif;
-  }
+.letras-erradas h3 {
+  margin-bottom: 10px;
+  color: #b56e6e;
+  font-size: 20px;
+  font-family: 'Garamond', serif;
+}
 
-  .letras-erradas {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+.letras-erradas-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  .letras-erradas h3 {
-    margin-bottom: 10px;
-    color: #b56e6e;
-    font-size: 20px;
-    font-family: 'Garamond', serif;
-  }
+.letra-errada {
+  background-color: #5a2c2c;
+  color: #f4e9e0;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(90, 44, 44, 0.4);
+  font-family: 'Georgia', serif;
+}
 
-  .letras-erradas-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+.intentos {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #d5cba3;
+}
 
-  .letra-errada {
-    background-color: #5a2c2c;
-    color: #f4e9e0;
-    font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    box-shadow: 0 2px 5px rgba(90, 44, 44, 0.4);
-    font-family: 'Georgia', serif;
-  }
+.form-letra, .form-palabra {
+  display: flex;
+  gap: 10px;
+}
 
-  .intentos {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 25px;
-    color: #d5cba3;
-  }
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #444f44;
+  color: #f5f0e6;
+  border: 2px solid #6c7a6c;
+  border-radius: 6px;
+  transition: border-color 0.2s ease-in-out;
+  font-family: 'Georgia', serif;
+}
 
-  .controles {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
+input[type="text"]:focus {
+  border-color: #a9bfa9;
+  outline: none;
+}
 
-  .form-letra, .form-palabra {
-    display: flex;
-    gap: 10px;
-  }
+button {
+  padding: 12px 20px;
+  background-color: #607d60;
+  color: #fdfdfd;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(60, 90, 60, 0.3);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-family: 'Georgia', serif;
+}
 
-  input[type="text"] {
-    flex: 1;
-    padding: 12px;
-    font-size: 16px;
-    background-color: #444f44;
-    color: #f5f0e6;
-    border: 2px solid #6c7a6c;
-    border-radius: 6px;
-    transition: border-color 0.2s ease-in-out;
-    font-family: 'Georgia', serif;
-  }
+button:hover {
+  background-color: #4a5f4a;
+  box-shadow: none;
+}
 
-  input[type="text"]:focus {
-    border-color: #a9bfa9;
-    outline: none;
-  }
+/* Overlay estilos */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-  button {
-    padding: 12px 20px;
-    background-color: #607d60;
-    color: #fdfdfd;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(60, 90, 60, 0.3);
-    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    font-family: 'Georgia', serif;
-  }
-
-  button:hover {
-    background-color: #4a5f4a;
-    box-shadow: none;
-  }
+.contenido-instrucciones {
+  background-color: #2e3f2e;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: #d5cba3;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
 </style>
-
+<script>
+  // Ya está arriba, solo agregar eventListener a submitPalabra para consistencia
+  document.getElementById('submitPalabra').addEventListener('click', function () {
+    this.textContent = this.textContent.toLowerCase();
+  });
+</script>
+</body>

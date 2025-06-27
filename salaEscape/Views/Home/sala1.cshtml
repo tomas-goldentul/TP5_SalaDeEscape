@@ -2,18 +2,13 @@
     ViewData["Title"] = "Sala 1";
 }
 <body id="sala1">
-<div class="fondosala1" id="fondosala1">
-    <div class="informacion-sala">
-        <h2>Bienvenido a la Sala 1</h2>
-        <p>En esta sala tenes que buscar por toda la habitacion los diarios perdidos que cada uno contiene una pista. Cuando los obtengas todos tenes que ordenas las pistas segun la fecha de publicacion de su respectivo diario. La fecha mas vieja va primero.</p>
-        <button onclick="ocultarFondo()">Comenzar Juego</button>
-    </div>
-</div>
-<form action='@Url.Action("Sala1", "Home")' method="POST" class="form-sala1">
-        <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5" />
-        <input type="submit" value="Seguro es así" />
-    </form>
-<div class="sala1-container">
+
+<form action='@Url.Action("Sala1", "Home")' method="POST" class="form-sala1" style="display:block;">
+    <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5" autocomplete="off"/>
+    <input type="submit" value="Seguro es así" />
+</form>
+
+<div class="sala1-container" style="display:block;">
     <button onclick="mostrarPista('pista1')" class="boton-pista" id="boton-pista1"></button>
     <button onclick="mostrarPista('pista2')" class="boton-pista" id="boton-pista2"></button>
     <button onclick="mostrarPista('pista3')" class="boton-pista" id="boton-pista3"></button>
@@ -41,14 +36,15 @@
         <span class="cerrar" onclick="cerrarPista('pista5')">×</span>
     </div>
 </div>
+
 <script>
-  // Función para ocultar el fondo y mostrar el contenido del juego
-    function ocultarFondo() {
-        // Oculta el fondo completo (la capa 'fondosala1' y su contenido)
-        document.getElementById('fondosala1').style.display = 'none';
-        
-        // Muestra el contenido de la sala (formulario, pistas, etc.)
-        document.getElementById('contenidoSala').style.display = 'block';
-    }
-    </script>
+  function mostrarPista(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function cerrarPista(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
 </body>

@@ -1,1 +1,54 @@
-<p>ganaste<p>
+@{
+    ViewBag.Title = "¡Ganaste!";
+}
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #1a1a1a, #2e2e2e);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .ganaste-container {
+            max-width: 700px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #4caf50;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px #4caf50;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #4caf50;
+            text-shadow: 0 0 10px #4caf50;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        @@keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="ganaste-container">
+        <h1>¡Felicidades, escapaste!</h1>
+        <p>Demostraste tu ingenio y resolviste todos los desafíos de la sala.</p>
+        <p>Gracias por jugar. ¡Nos vemos en la próxima aventura!</p>
+    </div>
+    <div class="easteregg">
+        <a href=''alt="">Bonus</a>
+    </div>
+</body>

@@ -39,13 +39,12 @@ public class HomeController : Controller
     {
         return View();
     }
-
     public IActionResult Sala1(int clave)
     {
         var sala = new Sala1();
         if(sala.Verificar(clave))
         {
-            HttpContext.Session.SetString(SALA_KEY, "6");
+            HttpContext.Session.SetString(SALA_KEY, "2");
             return RedirectToAction("Sala2");
         }
         return View();
@@ -118,7 +117,7 @@ public class HomeController : Controller
     public IActionResult Sala3(int clave)
     {
         if (!ValidarProgresoSala(3)) return RedirectToAction("Salas");
-        
+        if (clave == 68735)return Redirect("https://campus.ort.edu.ar/secundaria/almagro/informatica/articulo/2242387/sessions-implementacion-en-proyectos-asp-net-mvc");
         string qteEstado = HttpContext.Session.GetString(QTE_TERMINADO_KEY);
         if (qteEstado == null)
         {
@@ -150,7 +149,6 @@ public class HomeController : Controller
         HttpContext.Session.SetString(QTE_TERMINADO_KEY, "true");
         return Ok();
     }
-
     public IActionResult Sala4(int clave)
     {
         if (!ValidarProgresoSala(4)) return RedirectToAction("Salas");
@@ -164,7 +162,6 @@ public class HomeController : Controller
             }
             return RedirectToAction("Derrota");
         }
-        
         return View();
     }
 
@@ -174,7 +171,6 @@ public class HomeController : Controller
         if (string.IsNullOrEmpty(salaMaxima)) return false;
         return int.Parse(salaMaxima) >= salaActual;
     }
-
     [HttpGet]
     public IActionResult Sala5()
     {

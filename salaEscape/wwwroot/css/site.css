@@ -96,6 +96,39 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
 
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-instrucciones {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.contenido-instrucciones button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
 .informacion-sala button{
   margin-left: 40%;
   padding: 1.5%;
@@ -167,15 +200,16 @@ background-color: transparent ;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: 3px 4px 4px #13200e;
 }
   #salas img{
     display: inline-block;
     margin-left: 4%;
     margin-top: 16.8%;
     width: 12%;
-max-height: 100vh;
-object-fit: cover;
-transform-origin: bottom center;
+    max-height: 100vh;
+    object-fit: cover;
+    transform-origin: bottom center;
   }
   #salas img:hover {
     transform: scaleY(1.1); 
@@ -351,10 +385,10 @@ transform-origin: bottom center;
   background-repeat: no-repeat;
 }
 .sala4 {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .instrucciones {
@@ -384,9 +418,11 @@ transform-origin: bottom center;
     background-image: url('/images/rata.png');
     background-size: contain;
     background-repeat: no-repeat;
-    cursor: crosshair;
-    transition: all 0.5s ease;
+   transition: all 0.5s ease;
+   cursor: crosshair;
 }
+
+ 
 
 .rata.golpeada {
     opacity: 0.5;
@@ -538,3 +574,53 @@ cursor: pointer;
         .rocoso:active {
             transform: scale(0.95) translateY(2px);
         }
+        .sala6-container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+      
+      .botonera-simon {
+          display: inline-block;
+          padding: 20px;
+          background: #333;
+          border-radius: 50%;
+          margin: 20px auto;
+      }
+      
+      .fila-simon {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 20px;
+      }
+      
+      .fila-simon:last-child {
+          margin-bottom: 0;
+      }
+      
+      .btn-simon {
+          width: 150px;
+          height: 150px;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: all 0.2s;
+      }
+      
+      .btn-simon.rojo { background-image: url("/images/botonAntiguo1.png");}
+      .btn-simon.azul { background-image: url("/images/botonAntiguo2.png"); }
+      .btn-simon.verde { background-image: url("/images/botonAntiguo3.png"); }
+      .btn-simon.amarillo { background-image: url("/images/botonAntiguo4.png"); }
+      
+      .btn-simon.iluminado {
+          filter: brightness(1.5);
+          box-shadow: 0 0 20px rgba(255,255,255,0.8);
+          transform: scale(1.1);
+      }
+      
+      .estado-juego {
+          background: rgba(255,255,255,0.9);
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px;
+      }
