@@ -117,7 +117,7 @@ public class HomeController : Controller
     public IActionResult Sala3(int clave)
     {
         if (!ValidarProgresoSala(3)) return RedirectToAction("Salas");
-        if (clave == 68735)return Redirect("https://campus.ort.edu.ar/secundaria/almagro/informatica/articulo/2242387/sessions-implementacion-en-proyectos-asp-net-mvc");
+        if (clave == 68735)return Redirect("https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1");
         string qteEstado = HttpContext.Session.GetString(QTE_TERMINADO_KEY);
         if (qteEstado == null)
         {

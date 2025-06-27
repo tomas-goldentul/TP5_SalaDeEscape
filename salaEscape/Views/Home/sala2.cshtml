@@ -52,16 +52,16 @@
         </div>
     </div>
 </div>
-
-
-
 <style>
 body {
   margin: 0;
   padding: 0;
   font-family: 'Georgia', serif;
   color: #f5f0e6;
-  background-color: #1b2b1b;
+  background-color: #2c2a2a;
+  background-image: url('https://www.example.com/wood-texture.jpg'); /* Agregar una textura de madera aquí */
+  background-size: cover;
+  background-position: center center;
   overflow-x: hidden;
   position: relative;
 }
@@ -79,13 +79,14 @@ body {
 }
 
 .sala2-container {
-  background-color: #2e3f2e;
+  background-color: rgba(62, 49, 43, 0.9); /* Fondo con tono de madera oscura */
   width: 700px;
   margin: 60px auto;
   padding: 40px;
   border-radius: 12px;
-  border: 2px solid #a19b88;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 3px solid #8d6e63; /* Bordes con color madera clara */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  margin-top:7%;
 }
 
 .palabra-container {
@@ -101,9 +102,9 @@ body {
   height: 50px;
   font-size: 28px;
   font-weight: bold;
-  background-color: #3e4f3e;
+  background-color: #4e3d2d; /* Madera oscura */
   color: #e7e2d2;
-  border: 2px solid #6c7a6c;
+  border: 2px solid #8d6e63;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -158,9 +159,9 @@ input[type="text"] {
   flex: 1;
   padding: 12px;
   font-size: 16px;
-  background-color: #444f44;
+  background-color: #3e3a2e; /* Tono madera envejecida */
   color: #f5f0e6;
-  border: 2px solid #6c7a6c;
+  border: 2px solid #8d6e63;
   border-radius: 6px;
   transition: border-color 0.2s ease-in-out;
   font-family: 'Georgia', serif;
@@ -171,22 +172,30 @@ input[type="text"]:focus {
   outline: none;
 }
 
+/* Botones más elegantes */
 button {
   padding: 12px 20px;
-  background-color: #607d60;
+  background-color: #a67c52; /* Dorado envejecido */
   color: #fdfdfd;
   font-size: 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(60, 90, 60, 0.3);
-  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(166, 124, 82, 0.5);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
   font-family: 'Georgia', serif;
 }
 
 button:hover {
-  background-color: #4a5f4a;
-  box-shadow: none;
+  background-color: #9a6e3b; /* Dorado más oscuro */
+  box-shadow: 0 6px 15px rgba(90, 60, 30, 0.6);
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #7f5220; /* Dorado más oscuro en clic */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(2px);
 }
 
 /* Overlay estilos */
@@ -201,7 +210,7 @@ button:hover {
 }
 
 .contenido-instrucciones {
-  background-color: #2e3f2e;
+  background-color: rgba(62, 49, 43, 0.9); /* Fondo madera oscura */
   padding: 30px 40px;
   border-radius: 15px;
   text-align: center;
@@ -210,6 +219,10 @@ button:hover {
   box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 </style>
+
+
+
+
 <script>
   // Ya está arriba, solo agregar eventListener a submitPalabra para consistencia
   document.getElementById('submitPalabra').addEventListener('click', function () {
