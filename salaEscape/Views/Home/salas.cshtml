@@ -1,8 +1,21 @@
-<body id = "salas">
-<a href='@Url.Action("sala1")'alt=""><img src="/images/puerta1.png" alt="Descripción de la imagen"></a>
-<a href='@Url.Action("sala2")'alt=""><img src="/images/puerta2.png" alt="Descripción de la imagen"></a>
-<a href='@Url.Action("sala3")'alt=""><img src="/images/puerta3.png" alt="Descripción de la imagen"></a>
-<a href='@Url.Action("sala4")'alt=""><img src="/images/puerta4.png" alt="Descripción de la imagen"></a>
-<a href='@Url.Action("sala5")'alt=""><img src="/images/puerta5.png" alt="Descripción de la imagen"></a>
-<a href='@Url.Action("sala6")'alt=""><img src="/images/puerta6.png" alt="Descripción de la imagen"></a>
+<body id="salas" style="position: relative;">
+
+  <!-- Botón arriba a la derecha con imagen de casita más grande -->
+  <a href='@Url.Action("Index", "Home")' style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 60px;
+      height: 60px;
+      display: block;">
+    <img src="/images/casita.png" alt="Volver al Inicio" style="width: 100%; height: 100%; object-fit: contain;">
+  </a>
+
+  <a href='@Url.Action("sala1")' alt=""><img src="/images/puerta1.png" alt="Descripción de la imagen"></a>
+  <a href='@Url.Action("sala2")' alt=""><img src="/images/puerta2.png" alt="Descripción de la imagen"></a>
+  <a href='@Url.Action("sala3")' alt=""><img src="/images/puerta3.png" alt="Descripción de la imagen"></a>
+  <a href='@Url.Action("sala4")' alt=""><img src="/images/puerta4.png" alt="Descripción de la imagen"></a>
+  <a href='@Url.Action("sala5")' alt=""><img src="/images/puerta5.png" alt="Descripción de la imagen"></a>
+  <a href='@Url.Action("sala6")' alt=""><img src="/images/puerta6.png" alt="Descripción de la imagen"></a>
+
 </body>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj": {}
+    "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj": {}
   },
   "projects": {
-    "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj": {
+    "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
+        "projectUniqueName": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
         "projectName": "salaEscape",
-        "projectPath": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
+        "projectPath": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
         "packagesPath": "C:\\Users\\golde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\TP5_SalaDeEscape\\salaEscape\\obj\\",
+        "outputPath": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\salaEscape\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\golde\\AppData\\Roaming\\NuGet\\NuGet.Config",
