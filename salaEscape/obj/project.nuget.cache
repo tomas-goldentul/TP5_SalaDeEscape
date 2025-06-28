@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1LmpQZtyPpwhLCYkwIOpoUuU70RXjH25vDe9h9vj073srFxYNMXLJpyAS2xItvd2pHHaa6ARl+SX1kuT0lMLHg==",
+  "dgSpecHash": "VgsM9cyVysI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\49319223\\Downloads\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
+  "projectFilePath": "C:\\Users\\golde\\Downloads\\TP5_SalaDeEscape\\TP5_SalaDeEscape\\salaEscape\\salaEscape.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\49319223\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\golde\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

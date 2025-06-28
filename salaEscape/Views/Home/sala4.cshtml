@@ -1,9 +1,10 @@
 @{
     ViewData["Title"] = "Sala 4";
 }
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
 <body class="sala4fondo">
 
-<!-- Contenido del juego, visible desde el inicio -->
 <div class="sala4" id="juego-container" style="display: block;">
     <h1>Sala 4 - Los Murciélagos del Laboratorio</h1>
     <p class="instrucciones">Golpea a los murciélagos para descubrir el código secreto</p>
@@ -19,7 +20,6 @@
     </form>
 </div>
 
-<!-- Script -->
 <script>
     function mostrarFormularioClave(clave) {
         document.getElementById('formulario-codigo').style.display = 'block';
@@ -27,7 +27,6 @@
 </script>
 
 <style>
-    /* Si querés podés dejar o eliminar estos estilos del overlay */
     .overlay {
         position: fixed;
         top: 0; left: 0;

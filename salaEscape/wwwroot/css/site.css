@@ -378,34 +378,49 @@ background-color: transparent ;
 }
 
 /* Estilos Sala4 */
-.sala4fondo{
+.sala4fondo {
     background-image: url("/images/salaRatas.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 40px;
 }
+
 .sala4 {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+        cursor: url('/images/bate-cursor.png') 32 32, auto;
+
+    color: #ffffff;
+    font-family: 'MedievalSharp', serif;
 }
 
-.instrucciones {
+.sala4 .instrucciones {
     margin: 20px 0;
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1.4em;
+    text-shadow: 1px 1px 3px #000;
 }
 
-.juego-container {
+.sala4 .juego-container {
     position: relative;
     width: 800px;
     height: 500px;
     margin: 0 auto;
     overflow: hidden;
+    border: 3px solid #ffffff33;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
 }
 
-.area-juego {
+.sala4 .area-juego {
     width: 100%;
     height: 100%;
     position: relative;
@@ -422,15 +437,17 @@ background-color: transparent ;
    cursor: crosshair;
 }
 
- 
-
-.rata.golpeada {
-    opacity: 0.5;
-    pointer-events: none;
-    filter: grayscale(100%);
+.sala4 .rata:hover {
+    transform: scale(1.2);
 }
 
-.bate {
+.sala4 .rata.golpeada {
+    opacity: 0.3;
+    pointer-events: none;
+    filter: grayscale(100%) blur(1px);
+}
+
+.sala4 .bate {
     position: absolute;
     width: 80px;
     height: 160px;
@@ -443,12 +460,12 @@ background-color: transparent ;
     z-index: 100;
 }
 
-.numero {
+.sala4 .numero {
     position: absolute;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
-    color: #ff0000;
-    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    color: #ff4444;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     z-index: 200;
     pointer-events: none;
     animation: aparecer-numero 1s ease-out;
@@ -460,6 +477,29 @@ background-color: transparent ;
     100% { transform: scale(1); opacity: 0; }
 }
 
+@media (max-width: 900px) {
+    .sala4 .juego-container {
+        width: 100%;
+        height: 400px;
+    }
+
+    .sala4 .rata {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sala4 .bate {
+        width: 60px;
+        height: 120px;
+    }
+
+    .sala4 .numero {
+        font-size: 28px;
+    }
+}
+
+/*fin sala 4*/
+
 #formulario-codigo {
     margin-top: 20px;
 }
@@ -470,12 +510,13 @@ background-color: transparent ;
     width: 150px;
     text-align: center;
     margin-right: 10px;
+    border-radius: 8px;
 }
 
 #formulario-codigo button {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #4CAF50;
+    background-color: #324132;
     color: white;
     border: none;
     border-radius: 5px;
@@ -483,7 +524,7 @@ background-color: transparent ;
 }
 
 #formulario-codigo button:hover {
-    background-color: #45a049;
+    background-color: #1f2820;
 }
 
 #pad {
