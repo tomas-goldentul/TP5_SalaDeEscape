@@ -1,12 +1,67 @@
-﻿function mostrarPista(id) {
-    document.getElementById(id).style.display = "flex";
+﻿// Funciones del temporizador
+function formatTime(minutes, seconds) {
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-function cerrarPista(id) {
-    document.getElementById(id).style.display = "none";
+function updateTimer() {
+    const timerElement = document.getElementById('timer');
+    if (!timerElement) return;
+
+    let endTime = localStorage.getItem('escapeRoomEndTime');
+    if (!endTime) {
+        // Si no hay tiempo guardado, inicializar con 40 minutos
+        endTime = Date.now() + (40 * 60 * 1000);
+        localStorage.setItem('escapeRoomEndTime', endTime);
+    }
+
+    const timeLeft = Math.max(0, endTime - Date.now());
+    const minutes = Math.floor(timeLeft / 60000);
+    const seconds = Math.floor((timeLeft % 60000) / 1000);
+
+    timerElement.textContent = formatTime(minutes, seconds);
+
+    // Agregar clase warning cuando queden 5 minutos o menos
+    if (minutes <= 5) {
+        timerElement.classList.add('warning');
+    } else {
+        timerElement.classList.remove('warning');
+    }
+
+    // Si el tiempo se acabó
+    if (timeLeft <= 0) {
+        timerElement.textContent = '00:00';
+        timerElement.classList.add('warning');
+        alert('¡Se acabó el tiempo!');
+        window.location.href = '/Home/Derrota';
+        return;
+    }
+
+    setTimeout(updateTimer, 1000);
 }
 
+// Iniciar el temporizador cuando se carga el documento
 document.addEventListener("DOMContentLoaded", () => {
+    // Si estamos en la página de inicio o créditos, reiniciar el temporizador
+    if (window.location.pathname === '/' || 
+        window.location.pathname === '/Home' || 
+        window.location.pathname === '/Home/Index' ||
+        window.location.pathname === '/Home/Creditos' ||
+        window.location.pathname === '/Home/Historia') {
+        localStorage.removeItem('escapeRoomEndTime');
+    }
+    
+    // Si estamos en la página de derrota o victoria, no mostrar el temporizador
+    if (window.location.pathname === '/Home/Derrota' || 
+        window.location.pathname === '/Home/SalaFinal') {
+        const timerElement = document.getElementById('timer');
+        if (timerElement) {
+            timerElement.style.display = 'none';
+        }
+        return;
+    }
+
+    updateTimer();
+
     //Sala 3
     const sala3 = document.getElementById("sala3");
     if (sala3) {
@@ -137,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => {
                             sala3.style.backgroundImage = "url('/images/fondoSala34.png')";
                             destacarTecla(null);
+                            alert("68735");
                             document.getElementById("padbtn").style.display = "inline-block";
                             fetch('/Home/CompletarQte', { method: 'POST' })
                                 .then(() => window.location.reload());
@@ -264,3 +320,11 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(crearRatas, 500); // Dar tiempo a que todo se cargue correctamente
     }
 });
+
+function mostrarPista(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+function cerrarPista(id) {
+    document.getElementById(id).style.display = "none";
+}

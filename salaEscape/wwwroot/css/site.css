@@ -648,10 +648,18 @@ cursor: pointer;
           transition: all 0.2s;
       }
       
-      .btn-simon.rojo { background-image: url("/images/botonAntiguo1.png");}
-      .btn-simon.azul { background-image: url("/images/botonAntiguo2.png"); }
-      .btn-simon.verde { background-image: url("/images/botonAntiguo3.png"); }
-      .btn-simon.amarillo { background-image: url("/images/botonAntiguo4.png"); }
+      .btn-simon.rojo { background-image: url("/images/botonAntiguo1.png"); background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;}
+      .btn-simon.azul { background-image: url("/images/botonAntiguo2.png"); background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;}
+      .btn-simon.verde { background-image: url("/images/botonAntiguo3.png"); background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;}
+      .btn-simon.amarillo { background-image: url("/images/botonAntiguo4.png"); background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;}
       
       .btn-simon.iluminado {
           filter: brightness(1.5);

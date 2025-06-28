@@ -44,7 +44,7 @@ public class HomeController : Controller
         var sala = new Sala1();
         if(sala.Verificar(clave))
         {
-            HttpContext.Session.SetString(SALA_KEY, "2");
+            HttpContext.Session.SetString(SALA_KEY, "6");
             return RedirectToAction("Sala2");
         }
         return View();

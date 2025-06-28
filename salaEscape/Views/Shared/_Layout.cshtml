@@ -8,12 +8,39 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/salas.css" />
+    <style>
+        #timer {
+            position: fixed;
+            top: 20px;
+            right: 100px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d8c8a0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background-color: rgba(30, 20, 10, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        
+        #timer.warning {
+            color: #ff6b6b;
+            animation: pulse 1s infinite;
+        }
+        
+        @@keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
     @await RenderSectionAsync("Styles", required: false)
 </head>
 
 <body>
     <header>
         <a href='@Url.Action("Salas")'><img src="/images/puerta.png" alt="Salas" style="margin: 10px; width: 50px; box-shadow: 2px -1px 3px rgb(104, 75, 21);"></a>
+        <div id="timer">40:00</div>
     </header>
 
     <main role="main">
