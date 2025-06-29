@@ -57,7 +57,40 @@ public class Sala2
     }
     public List<string> cargarPalabras()
     {
-        List<string> listaPalabras = new List<string>() { "manzana" };
+        List<string> listaPalabras = new List<string>()
+{
+    "manzana",
+    "castillo",
+    "espada",
+    "caballero",
+    "armadura",
+    "rey",
+    "reina",
+    "alquimia",
+    "dragón",
+    "grifo",
+    "taberna",
+    "mazmorra",
+    "antorcha",
+    "hechicero",
+    "reino",
+    "feudo",
+    "trono",
+    "escudo",
+    "bruja",
+    "pergamino",
+    "arca",
+    "carreta",
+    "catapulta",
+    "oráculo",
+    "fortaleza",
+    "gólem",
+    "templario",
+    "corona",
+    "heráldica",
+    "bastión"
+};
+
         return listaPalabras;
     }
 }

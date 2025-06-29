@@ -1,12 +1,11 @@
 @{ ViewData["Title"] = "Sala 6 - Simón Dice"; }
-
+<body style="background-image: url('/images/fondoSala6.png'); background-size: cover;">
 <div class="sala6-container text-center">
-  <h1>Sala 6 - Simón Dice</h1>
-  <div class="estado-juego mb-4">
-    <h3>Ronda <span id="ronda-actual">1</span> de 10</h3>
-    <p id="mensaje-estado" class="alert alert-info">¡Preparado!</p>
+  <div class="estado-juego mb-4" style="background-color: #00000000;">
+    <h3 style="color: #e9bb58; font-family: 'MedievalSharp', cursive;">Ronda <span id="ronda-actual">1</span> de 10</h3>
+    <p id="mensaje-estado" class="alert alert-info" style="color: #e9bb58; font-family: 'MedievalSharp', cursive;">¡Preparado!</p>
   </div>
-  <div class="botonera-simon">
+  <div class="botonera-simon" style="background-color: #00000000;">
     <div class="fila-simon">
       <button class="btn-simon rojo" data-color="R"></button>
       <button class="btn-simon azul" data-color="B"></button>
@@ -16,13 +15,13 @@
       <button class="btn-simon amarillo" data-color="Y"></button>
     </div>
   </div>
-  <button id="btn-empezar" class="btn btn-primary mt-4">¡Empezar!</button>
+  <button id="btn-empezar" class="btn btn-primary mt-4"style="color: #e9bb58; font-family: 'MedievalSharp', cursive; background-color: #3c3c33; border: none; border-radius: 10px; padding: 10px;">¡Empezar!</button>
 </div>
 
 <form id="form-ganar" method="post" asp-action="Sala6" style="display:none">
   <input type="hidden" name="accion" value="ganar" />
 </form>
-
+</body>
 @section Scripts {
 <script>
   const colores = ['R', 'B', 'G', 'Y'];

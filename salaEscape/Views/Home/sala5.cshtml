@@ -14,7 +14,7 @@
 
     @if (cantLetras > 0)
     {
-        <p>La palabra tiene <b>@cantLetras</b> letras.</p>
+        <p style="color: #e9bb58; font-family: 'MedievalSharp', cursive;">La palabra tiene <b>@cantLetras</b> letras.</p>
     }
 
     @if (ViewBag.error != null)
@@ -29,7 +29,6 @@
             foreach (var wordle in historial)
             {
                 <div>
-                    <h4>Wordle @num</h4>
                     @foreach (var jugada in wordle.Jugadas)
                     {
                         <div>
@@ -52,8 +51,8 @@
         @if (!finalizado)
         {
             <form action='@Url.Action("Sala5", "Home")' method="POST" class="form-wordle">
-                <input type="text" name="wordle" pattern="[a-zA-Z]+" placeholder="Palabra" required autocomplete="off" maxlength="@cantLetras" minlength="@cantLetras">
-                <button type="submit">Comprobar</button>
+                <input type="text" name="wordle" pattern="[a-zA-Z]+" placeholder="Palabra" required autocomplete="off" maxlength="@cantLetras" minlength="@cantLetras" style="color: #e9bb58; font-family: 'MedievalSharp', cursive; background-color: #3c3c33; border: none; border-radius: 10px; padding: 10px;">
+                <button type="submit" style="color: #e9bb58; font-family: 'MedievalSharp', cursive; background-color: #3c3c33; border: none; border-radius: 10px; padding: 10px;">Comprobar</button>
             </form>
         }
     </div>
@@ -62,7 +61,7 @@
     {
         <div id="submitCodigo">
             <form action='@Url.Action("Sala5", "Home")' method="POST">
-                <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5">
+                <input type="text" name="clave" placeholder="Ordená las pistas" required minlength="5" maxlength="5" style="color: #e9bb58; font-family: 'MedievalSharp', cursive; background-color: #3c3c33; border: none; border-radius: 10px; padding: 10px;">
                 <input type="submit" value="Guardar">
             </form>
         </div>
