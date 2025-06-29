@@ -1,10 +1,16 @@
 @{ ViewData["Title"] = "Sala 6 - Simón Dice"; }
 <body style="background-image: url('/images/fondoSala6.png'); background-size: cover;">
 <div class="sala6-container text-center">
+
+  <div class="alert alert-warning" style="color: #3c3c33; background-color: #e9bb58; font-family: 'MedievalSharp', cursive; border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+    <p>Se mostrará una secuencia de estandartes. Tu objetivo es repetirla correctamente. Si completas bien las 10 ronda ganas.
+  </div>
+
   <div class="estado-juego mb-4" style="background-color: #00000000;">
     <h3 style="color: #e9bb58; font-family: 'MedievalSharp', cursive;">Ronda <span id="ronda-actual">1</span> de 10</h3>
     <p id="mensaje-estado" class="alert alert-info" style="color: #e9bb58; font-family: 'MedievalSharp', cursive;">¡Preparado!</p>
   </div>
+
   <div class="botonera-simon" style="background-color: #00000000;">
     <div class="fila-simon">
       <button class="btn-simon rojo" data-color="R"></button>
@@ -15,13 +21,15 @@
       <button class="btn-simon amarillo" data-color="Y"></button>
     </div>
   </div>
-  <button id="btn-empezar" class="btn btn-primary mt-4"style="color: #e9bb58; font-family: 'MedievalSharp', cursive; background-color: #3c3c33; border: none; border-radius: 10px; padding: 10px;">¡Empezar!</button>
+
+  <button id="btn-empezar" class="btn btn-primary mt-4" style="color: #e9bb58; font-family: 'MedievalSharp', cursive; background-color: #3c3c33; border: none; border-radius: 10px; padding: 10px;">¡Empezar!</button>
 </div>
 
 <form id="form-ganar" method="post" asp-action="Sala6" style="display:none">
   <input type="hidden" name="accion" value="ganar" />
 </form>
 </body>
+
 @section Scripts {
 <script>
   const colores = ['R', 'B', 'G', 'Y'];
@@ -115,30 +123,6 @@
       agregarColorAleatorio();
       await new Promise(resolve => setTimeout(resolve, 800));
       await mostrarSecuencia();
-    }
-  }
-
-  // Mostrar mensaje bienvenida solo la primera vez
-  if (!localStorage.getItem("sala6BienvenidaMostrada")) {
-    const contenedor = document.querySelector(".sala6-container");
-    if (contenedor) {
-      const bienvenida = document.createElement("div");
-      bienvenida.className = "alert alert-primary";
-      bienvenida.style.marginBottom = "20px";
-      bienvenida.innerHTML = `
-        <h4>¡Bienvenido a la Sala 6 - Simón Dice!</h4>
-        <p>Debes memorizar la secuencia de colores y repetirla. Cada ronda se suma un color nuevo. ¡Llegá a la ronda 10 para ganar!</p>
-        <button class="btn btn-success mt-2" id="btn-bienvenida">Entendido</button>
-      `;
-      contenedor.prepend(bienvenida);
-
-      btnEmpezar.style.display = "none";
-
-      document.getElementById("btn-bienvenida").addEventListener("click", () => {
-        bienvenida.remove();
-        btnEmpezar.style.display = "inline-block";
-        localStorage.setItem("sala6BienvenidaMostrada", "true");
-      });
     }
   }
 
