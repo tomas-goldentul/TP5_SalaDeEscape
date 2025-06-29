@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => {
                             sala3.style.backgroundImage = "url('/images/fondoSala34.png')";
                             destacarTecla(null);
-                            alert("68735");
+                            alert("42987");
                             document.getElementById("padbtn").style.display = "inline-block";
                             fetch('/Home/CompletarQte', { method: 'POST' })
                                 .then(() => window.location.reload());
