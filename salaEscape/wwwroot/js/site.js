@@ -284,7 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 bate.style.transform = 'rotate(0deg)';
                 rata.classList.add('golpeada');
     
-                // Mostrar número solo si esta rata está marcada para mostrarlo
                 if (rata.dataset.muestraCodigo === 'true' && digitoActual < CODIGO.length) {
                     const numero = document.createElement('div');
                     numero.className = 'numero';
@@ -315,9 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }, 200);
         }
-    
-        // Iniciar el juego
-        setTimeout(crearRatas, 500); // Dar tiempo a que todo se cargue correctamente
+        setTimeout(crearRatas, 500);
     }
 });
 
