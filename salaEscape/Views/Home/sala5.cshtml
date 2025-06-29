@@ -4,7 +4,9 @@
     int wordleActual = ViewBag.wordleActual ?? 1;
     bool finalizado = ViewBag.finalizado ?? false;
     int cantLetras = ViewBag.cantLetras ?? 0;
-    string fondo = $"/images/fondoSala5{wordleActual - 1}.png";
+string fondo = finalizado 
+    ? "/images/fondoSala51.png" 
+    : $"/images/fondoSala5{wordleActual - 1}.png";
 }
 <body style="background-image: url('@fondo'); background-size: cover;">
 
